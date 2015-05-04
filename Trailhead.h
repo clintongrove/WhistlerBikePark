@@ -1,44 +1,52 @@
 #ifndef TRAILHEAD_H_
 #define TRAILHEAD_H_
-#include "ChairLift.h"
-#include "Rider.h"
+class Trail;
+class ChairLift;
+class IntermediateRider;
+class BeginnerRider;
+class AdvancedRider;
+class Rider;
+#include "Ticket.h"
+#include <queue>
+#include <set>
+#include <typeinfo>
+#include "IntermediateRider.h"
 #include "BeginnerRider.h"
 #include "AdvancedRider.h"
-#include "IntermediateRider.h"
-#include <queue>
-#include <vector>
-#include <time.h>
-#include <set>
-
+#include "ChairLift.h"
 class Trailhead{
-private:
+public:
 	ChairLift *lift;
-	Trail * descent;
 	std::queue<Rider*> trail_line;
 	std::set<Trail*> the_trails;
-public:
 	Trailhead(){}
-	Trailhead(std::set<Trail*> trails){
-		this->the_trails = trails;}
-	void get_next(){
-		Rider * current;
-		if (typeid(trail_line.front()) == typeid(BeginnerRider))
-			dynamic_cast<BeginnerRider*>(current);
-		if (typeid(trail_line.front()) == typeid(IntermediateRider))
-			dynamic_cast<IntermediateRider*>(current);
-		if (typeid(trail_line.front()) == typeid(AdvancedRider))
-			dynamic_cast<AdvancedRider*>(current);
-
-		Trail chosen = current->choice(the_trails);
-
-
+	Trailhead(std::set<Trail*> trails, ChairLift *l){
+		this->the_trails = trails;
+		this->lift = l;
 	}
-	void Descend(Rider *r, Trail *t){
-		//timestamp pass
+	void get_next(){
+		Trail *chosen;
+		Rider * current = trail_line.front();
+		if (typeid(trail_line.front()) == typeid(BeginnerRider)){
+		BeginnerRider * b = dynamic_cast<BeginnerRider*>(current);
+		Trail chosen = b->choice(the_trails);
+		}
+		if (typeid(trail_line.front()) == typeid(IntermediateRider)){
+		IntermediateRider * r = dynamic_cast<IntermediateRider*>(current);
+		Trail chosen = r->choice(the_trails);
+		}
+		if (typeid(trail_line.front()) == typeid(AdvancedRider)){
+		AdvancedRider * a = dynamic_cast<AdvancedRider*>(current);
+		Trail chosen = a->choice(the_trails);
+		}
+		Trailhead::Descend(current, chosen);
+	}
+	void Descend(Rider *r, Trail *t,int clock){
+		
+		r->pass.UpdateTrailhead(wait_time,this);
 		trail_line.pop();
 
 	}
-
 };
 
 #endif

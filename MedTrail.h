@@ -1,17 +1,11 @@
 #ifndef MEDTRAIL_H_
 #define MEDTRAIL_H_
-#include <iostream>
-#include "Trailhead.h"
+class Trailhead;
+#include "Trail.h"
 class MedTrail : public Trail{
 
 public:
-	MedTrail(){}
-	MedTrail(double hard, double length, Trailhead * start, Trailhead * stop){
-		this->difficulty = hard;
-		this->distance = length;
-		this->destination = stop;
-		this->origin = start;
-	}
+	MedTrail(Trailhead*d, Trailhead*o, double dist, double diff) :Trail(d,o,dist,diff){}
 	bool inuse;
 	double difficulty;
 	double distance;

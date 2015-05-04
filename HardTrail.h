@@ -1,17 +1,11 @@
 #ifndef HARDTRAIL_H_
 #define HARDTRAIL_H_
-#include <iostream>
-#include "Trailhead.h"
+class Trailhead;
+#include "Trail.h"
 class HardTrail : public Trail{
 
 public:
-	HardTrail(){}
-	HardTrail(double hard, double length, Trailhead * start, Trailhead * stop){
-		this->difficulty = hard;
-		this->distance = length;
-		this->destination = stop;
-		this->origin = start;
-	}
+	HardTrail(Trailhead*d, Trailhead*o, double dist, double diff) :Trail(d, o, dist, diff){}
 	bool inuse;
 	double difficulty;
 	double distance;

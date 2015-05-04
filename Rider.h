@@ -1,20 +1,22 @@
 #ifndef RIDER_H_
 #define RIDER_H_
-#include <iostream>
-
+class Trail;
+class Bicycle;
+#include<iostream>
+#include "Ticket.h"
+#include "Trail.h"
 class Rider{
 	friend class Trailhead;
-private:
+public:
 	double skill_lvl;
 	double endurance;
-	
-public:
-	Rider(){}
-	Rider(double skill, double enduro){
-		skill_lvl = skill;
-		endurance = enduro;}
+	Bicycle *whip;
 	Ticket pass;
-	virtual void choice() = 0;
+	Rider(double skill, double enduro){
+		this->skill_lvl = skill;
+		this->endurance = enduro;
+	}
+	virtual Trail choice(std::set<Trail*> trails) = 0;
 };
 
 #endif

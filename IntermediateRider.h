@@ -1,63 +1,57 @@
 #ifndef INTERMEDIATERIDER_H_
 #define INTERMEDIATERIDER_H_
-#include <iostream>
-#include "Ticket.h"
-#include "AMBicycle.h"
-#include "EasyTrail.h"
-#include "HardTrail.h"
-#include "MedTrail.h"
-#include "Trail.h"
-#include "Rider.h"
+class HardTrail;
+#include<iostream>
 #include <time.h>
-class IntermediateRider : public Rider{
+#include <set>
+#include <iterator>
+#include <vector>
+#include <algorithm>
+#include "Rider.h"
+#include "Trail.h"
+#include "AMBicycle.h"
+#include "Ticket.h"
+class IntermediateRider : virtual public Rider{
 	friend class Trailhead;
-private:
+public:
 	double skill_lvl;
 	double endurance;
 	AMBicycle whip;
-
-public:
-	IntermediateRider(){
-		srand(time(NULL));
-		skill_lvl = 4+rand() % 2;
-		endurance = rand() % 10;
-	}
-	IntermediateRider(double skill, double enduro){
-		skill_lvl = skill;
-		endurance = enduro;
+	IntermediateRider(double skill, double enduro) :Rider(skill, enduro){
+		this->skill_lvl = skill;
+		this->endurance = enduro;
 	}
 	Ticket pass;
-	Trail choice(std::set<Trail*> trails){
-		std::set<Trail*> the_trails = trails;
-		std::set<Trail*>::iterator it = the_trails.begin();
-		while (it != the_trails.end()){
+	Trail choice(std::set<Trail*>the_trails){
+		std::vector<Trail*> rider_trails;
+		for (std::set<Trail*>::iterator it = the_trails.begin(); it != the_trails.end(); it++){
 			if (typeid(HardTrail) == typeid(*it)){
-				the_trails.erase(it);
-				it++;
+				continue;
 			}
-			if (this->skill_lvl < (*it)->difficulty){
-				the_trails.erase(it);
-				it++;
+			else if (this->skill_lvl < (*it)->difficulty){
+				continue;
 			}
-			if ((*it)->inuse == 1){
-				the_trails.erase(it);
-				it++;
+			else if ((*it)->inuse == 1){
+				continue;
 			}
-			else
-				it++;
+			else{
+				rider_trails.push_back(*it);
+				continue;
+			}
 		}
-		it = the_trails.begin();
-		Trail *the_one;
 		double most = 0;
-		while (it != the_trails.end()){
-			if ((*it)->difficulty > most){
-				most = (*it)->difficulty;
-				the_one = (*it);
-				it++;
+		int the_one = 0;
+		for (int i = 0; i < rider_trails.size(); ++i){
+			if (most>rider_trails[i]->difficulty){
+				continue;
 			}
-
+			else{
+				most = rider_trails[i]->difficulty;
+				the_one = i;
+				continue;
+			}
 		}
-		return *the_one;
+		return *(rider_trails[the_one]);
 	}
 };
 
