@@ -1,4 +1,4 @@
-﻿Build started 5/5/2015 11:27:31 AM.
+﻿Build started 5/5/2015 12:26:07 PM.
      1>Project "C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\WhistlerBikePark\WhistlerBikePark.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BikePark.cpp
@@ -18,13 +18,13 @@
      1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\advancedrider.h(43): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\advancedrider.h(57): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\advancedrider.h(64): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\chairlift.h(29): error C2027: use of undefined type 'Trailhead'
-                 c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\ticket.h(4) : see declaration of 'Trailhead'
-     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\chairlift.h(29): error C2227: left of '->trail_line' must point to class/struct/union/generic type
-     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\chairlift.h(29): error C2228: left of '.push' must have class/struct/union
      1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\trailhead.h(53): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>Done Building Project "C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\WhistlerBikePark\WhistlerBikePark.vcxproj" (Build target(s)) -- FAILED.
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\bikepark.cpp(21): warning C4101: 'clock' : unreferenced local variable
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\Debug\WhistlerBikePark.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\Debug\WhistlerBikePark.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\Debug\WhistlerBikePark.lib" /MACHINE:X86 Debug\BikePark.obj
+         WhistlerBikePark.vcxproj -> C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\Debug\WhistlerBikePark.exe
+     1>Done Building Project "C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\WhistlerBikePark\WhistlerBikePark.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:01.39
+Time Elapsed 00:00:02.06

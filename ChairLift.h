@@ -12,7 +12,7 @@ public:
 	int num_served = 0;
 	int total_wait = 0;
 	int ride = 5;
-	ChairLift();
+	ChairLift(){};
 	ChairLift(Trailhead*d, Trailhead*o){
 		this->destination = d;
 		this->origin = o;
@@ -26,7 +26,6 @@ public:
 			++num_served;
 			total_wait += wait_time;
 			the_queue.pop();
-			this->destination->trail_line.push(current);
 
 		}
 		}

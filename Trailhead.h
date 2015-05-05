@@ -20,7 +20,7 @@ public:
 	int total_wait=0;
 	std::queue<Rider*> trail_line;
 	std::set<Trail*> the_trails;
-	Trailhead();
+	Trailhead(){};
 	Trailhead(std::set<Trail*> trails, Trailhead * next){
 		this->the_trails = trails;
 		lift->destination = next;
