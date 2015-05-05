@@ -1,19 +1,18 @@
 #ifndef TRAILHEAD_H_
 #define TRAILHEAD_H_
-class Trail;
-class ChairLift;
-class IntermediateRider;
-class BeginnerRider;
-class AdvancedRider;
-class Rider;
-#include "Ticket.h"
 #include <queue>
 #include <set>
 #include <typeinfo>
 #include "IntermediateRider.h"
 #include "BeginnerRider.h"
 #include "AdvancedRider.h"
+#include "Ticket.h"
 #include "ChairLift.h"
+class Trail;
+class IntermediateRider;
+class BeginnerRider;
+class AdvancedRider;
+class Rider;
 class Trailhead{
 public:
 	ChairLift *lift;
@@ -21,10 +20,11 @@ public:
 	int total_wait=0;
 	std::queue<Rider*> trail_line;
 	std::set<Trail*> the_trails;
-	Trailhead(){}
-	Trailhead(std::set<Trail*> trails, ChairLift *l){
+	Trailhead();
+	Trailhead(std::set<Trail*> trails, Trailhead * next){
 		this->the_trails = trails;
-		this->lift = l;
+		lift->destination = next;
+		lift->origin = this;
 	}
 	void update(int clock){
 		if (!trail_line.empty()){
@@ -51,19 +51,15 @@ public:
 			
 			double run_time = current->run(chosen);//calculate run time 
 			current->pass.UpdateTrail(run_time,chosen);//record run time
+			trail_line.pop();
 			num_served++;
 			total_wait += wait_time;
-
-			trail_line.pop();//pushes rider from trailhead queue to chairlift queue, updating arrival time
 			current->arrival_time = clock;
-			lift->the_queue.push(current);
-			lift->update(clock);
+			current->departure_time = clock + lift->ride;
+			chosen->destination->lift->the_queue.push(current);
 			}
 
 		}
-
-		
-
 
 };
 

@@ -4,17 +4,17 @@
 #include <algorithm>
 #include <map>
 #include "Trailhead.h"
+#include "EasyTrail.h"
+#include "MedTrail.h"
+#include "HardTrail.h"
+#include "Rider.h"
+#include "ChairLift.h"
 class BeginnerRider;
-class ChairLift;
 class Trailhead;
 class Trail;
 class EasyTrail;
 class MedTrail;
 class HardTrail;
-#include "EasyTrail.h"
-#include "MedTrail.h"
-#include "HardTrail.h"
-#include "Rider.h"
 using namespace std;
 
 int main(){
@@ -53,20 +53,11 @@ int main(){
 	map2.insert(make_pair("CanyonCross", CanyonCross));
 	map2.insert(make_pair("RopeBridge", RopeBridge));
 
-	ChairLift *lift1 = new ChairLift(Base, Base1);
-	ChairLift *lift2 = new ChairLift(Base, Base2);
 
+
+	ChairLift *lift1 = new ChairLift(Base1, Base);
 	Base1->the_trails = set1;
-	Base1->lift = lift1;
-	Base2->the_trails = set2;
-	Base2->lift = lift2;
-
-	Rider *s= new BeginnerRider (6.0, 6.0);
-	Trail t = s->choice(set1);
-	Rider *q = new IntermediateRider(6.0, 6.0);
-	Trail te = s->choice(set1);
-	Rider *l = new AdvancedRider(6.0, 6.0);
-	Trail tq = s->choice(set1);
+	Base->lift = lift1;
 	
 
 	

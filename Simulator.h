@@ -31,10 +31,6 @@ public:
 			for (int i = 1; i < lifts; i++){
 				Chairlifts[i]->update(clock);
 			}
-			
-			//update Trail line
-			//update chair line
-			//
 
 		}
 
