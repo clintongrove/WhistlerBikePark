@@ -22,6 +22,8 @@ public:
 		this->endurance = enduro;
 	}
 	Ticket pass;
+	int arrival_time;
+	int departure_time;
 	Trail choice(std::set<Trail*>the_trails){
 		std::vector<Trail*> rider_trails;
 		for (std::set<Trail*>::iterator it = the_trails.begin(); it != the_trails.end(); it++){
@@ -49,6 +51,22 @@ public:
 			}
 		}
 		return *(rider_trails[the_one]);
+	}
+	double run(Trail* t){
+		double active, passive, mechanical;
+		int length = t->distance;
+		double end = length - endurance;
+
+		mechanical = whip.mechanical();
+		if (mechanical == 0)
+			passive = (length - end) / (skill_lvl * 3);
+		else{
+			srand(time(NULL));
+			end = rand() % length;
+			mechanical = (length - end) / 3;
+			active = (end) / (skill_lvl * 3);
+		}
+		return active + passive + mechanical;
 	}
 };
 
