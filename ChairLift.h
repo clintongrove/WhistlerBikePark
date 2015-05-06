@@ -16,6 +16,7 @@ public:
 	ChairLift(Trailhead*d, Trailhead*o){
 		this->destination = d;
 		this->origin = o;
+		std::cout << " chairlift Constructed!" << std::endl;
 	}
 	void update(int clock){
 		if (!the_queue.empty()){

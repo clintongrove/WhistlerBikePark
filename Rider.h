@@ -18,7 +18,7 @@ public:
 		this->skill_lvl = skill;
 		this->endurance = enduro;
 	}
-	virtual Trail choice(std::set<Trail*> trails) = 0;
+	virtual Trail* choice(std::set<Trail*> trails) = 0;
 	virtual double run(Trail*t) = 0;
 };
 

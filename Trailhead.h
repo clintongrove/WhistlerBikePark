@@ -20,31 +20,19 @@ public:
 	int total_wait=0;
 	std::queue<Rider*> trail_line;
 	std::set<Trail*> the_trails;
-	Trailhead(){};
+	Trailhead(){ std::cout << " Trailhead default Constructed!" << std::endl; };
 	Trailhead(std::set<Trail*> trails, Trailhead * next){
 		this->the_trails = trails;
 		lift->destination = next;
 		lift->origin = this;
+		std::cout <<" Trailhead Constructed!"<< std::endl;
 	}
 	void update(int clock){
 		if (!trail_line.empty()){
 			int wait_time;
 			Trail *chosen;
 			Rider * current = trail_line.front();
-			//rider trail choice selection
-			if (typeid(trail_line.front()) == typeid(BeginnerRider)){
-				BeginnerRider * b = dynamic_cast<BeginnerRider*>(current);
-				Trail chosen = b->choice(the_trails);
-			}
-			if (typeid(trail_line.front()) == typeid(IntermediateRider)){
-				IntermediateRider * r = dynamic_cast<IntermediateRider*>(current);
-				Trail chosen = r->choice(the_trails);
-			}
-			if (typeid(trail_line.front()) == typeid(AdvancedRider)){
-				AdvancedRider * a = dynamic_cast<AdvancedRider*>(current);
-				Trail chosen = a->choice(the_trails);
-			}
-			
+			chosen = current->choice(the_trails);//rider trail choice selection
 			wait_time = clock - current->arrival_time;//updating ticket with current riders wait time
 			current->pass.UpdateTrailhead(wait_time, this);
 

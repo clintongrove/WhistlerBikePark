@@ -27,7 +27,7 @@ public:
 	Ticket pass;
 	int arrival_time;
 	int departure_time;
-	Trail choice(std::set<Trail*>the_trails){
+	Trail* choice(std::set<Trail*>the_trails){
 				std::vector<Trail*> rider_trails;
 				for (std::set<Trail*>::iterator it = the_trails.begin(); it != the_trails.end(); it++){
 					if (typeid(*it) == typeid(MedTrail) || typeid(*it) == typeid(HardTrail)){
@@ -56,7 +56,7 @@ public:
 						continue;
 				}
 				}
-				return *(rider_trails[the_one]);
+				return (rider_trails[the_one]);
 			}
 	double run(Trail* t){
 		double active, passive, mechanical;

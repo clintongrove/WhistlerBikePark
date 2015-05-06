@@ -93,6 +93,7 @@
     <ClInclude Include="MedTrail.h" />
     <ClInclude Include="Mountain.h" />
     <ClInclude Include="Rider.h" />
+    <ClInclude Include="RiderGenerator.h" />
     <ClInclude Include="Simulator.h" />
     <ClInclude Include="Ticket.h" />
     <ClInclude Include="Trail.h" />
