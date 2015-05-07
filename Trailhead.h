@@ -43,7 +43,7 @@ public:
 			num_served++;
 			total_wait += wait_time;
 			current->arrival_time = clock;
-			current->departure_time = clock + lift->ride;
+			current->departure_time = clock;
 			chosen->destination->lift->the_queue.push(current);
 			}
 

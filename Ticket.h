@@ -6,13 +6,16 @@ class Trail;
 class ChairLift;
 class Ticket{
 private:
-	bool valid = 1;
+	
 	std::map<int, Trail*> TrailRecords;
 	std::map<int, Trailhead*> TrailheadRecords;
 	std::map<int, ChairLift*> ChairLiftRecords;
-	int ticket_no;
+	
 public:
+	bool valid = 1;
+	int ticket_no;
 	Ticket(){}
+	Ticket(int number){ ticket_no = number; }
 	void UpdateTrail(int run_time,Trail* trail){
 		TrailRecords.insert(std::pair<int,Trail*>(run_time, trail));
 	}

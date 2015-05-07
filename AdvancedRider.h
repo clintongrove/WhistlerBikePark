@@ -14,14 +14,17 @@ class Trail;
 class AdvancedRider : virtual public Rider{
 	friend class Trailhead;
 public:
+	std::string name;
 	double skill_lvl;
 	double endurance;	
 	DHBicycle whip;
-	AdvancedRider(double skill, double enduro) :Rider(skill, enduro){
+	Ticket pass;
+	AdvancedRider(double skill, double enduro, int ticket) :Rider(skill, enduro,ticket){
 		this->skill_lvl = skill;
 		this->endurance = enduro;
+		pass = Ticket(ticket);
 	}
-	Ticket pass;
+	
 	int arrival_time;
 	int departure_time;
 	Trail *choice(std::set<Trail*>the_trails){

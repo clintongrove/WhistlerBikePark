@@ -20,15 +20,19 @@ public:
 	}
 	void update(int clock){
 		if (!the_queue.empty()){
-		Rider * current = the_queue.front();
-		if (clock > current->departure_time){
-			int wait_time = current->departure_time - current->arrival_time;
-			current->pass.UpdateChairLift(wait_time, this);
-			++num_served;
-			total_wait += wait_time;
-			the_queue.pop();
-
-		}
+			Rider * current = the_queue.front();
+			if (current->pass.valid == 1){
+				current->departure_time = (clock - ride);
+				if (clock > current->departure_time){
+					
+					int wait_time = current->departure_time - current->arrival_time;
+					current->pass.UpdateChairLift(wait_time, this);
+					++num_served;
+					total_wait += wait_time;
+					the_queue.pop();
+					//FIXME push rider to desired trailhead
+				}
+			}
 		}
 	}
 };

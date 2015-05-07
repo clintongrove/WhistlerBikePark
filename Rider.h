@@ -8,13 +8,14 @@ class Bicycle;
 class Rider{
 	friend class Trailhead;
 public:
+	std::string name;
 	double skill_lvl;
 	double endurance;
 	Bicycle *whip;
 	Ticket pass;
 	int arrival_time;
 	int departure_time;
-	Rider(double skill, double enduro){
+	Rider(double skill, double enduro, int ticket){
 		this->skill_lvl = skill;
 		this->endurance = enduro;
 	}
