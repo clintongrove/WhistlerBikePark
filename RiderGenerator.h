@@ -78,21 +78,21 @@ public:
 		double who = ((double)rand() / RAND_MAX); // makes a double between 0 and 1
 		Rider *r;
 
-		if () // FIXME
+		if (who <= pbeginner)
 		{
-			r = new AdvancedRider(get_skill_level("advanced"), get_endurance("advanced"), ticket_no);
+			r = new BeginnerRider(get_skill_level("beginner"), get_endurance("beginner"), ticket_no);
 			riders.insert(std::pair<string, Rider*>(random_name, r));
-			ticket_no++;
+			ticket_no++; 
 		}
-		else if () // FIXME
+		else if (who <= (pbeginner + pintermediate) && who > pbeginner)
 		{
 			r = new IntermediateRider(get_skill_level("intermediate"), get_endurance("intermediate"), ticket_no);
 			riders.insert(std::pair<string, Rider*>(random_name, r));
 			ticket_no++;
 		}
-		else if () // FIXME
+		else if (who > (pbeginner + pintermediate))
 		{
-			r = new BeginnerRider(get_skill_level("beginner"), get_endurance("beginner"), ticket_no);
+			r = new AdvancedRider(get_skill_level("advanced"), get_endurance("advanced"), ticket_no);
 			riders.insert(std::pair<string, Rider*>(random_name, r));
 			ticket_no++;
 		}

@@ -5,6 +5,7 @@
 #include <fstream>
 #include <vector>
 #include <set>
+//#include <ios>
 //#include <sstream>
 
 
@@ -30,6 +31,10 @@ public:
 		input_beginner_percent();
 		input_intermediate_percent();
 		input_advanced_percent();
+
+		if (!(get_pbeginner() + get_pintermediate() + get_padvanced()) == 1)
+			throw std::invalid_argument("Percentages don't add to 1.\n");
+
 		input_arrival_rate();
 	}
 
@@ -110,19 +115,6 @@ public:
 
 
 	/**
-	@return string of what the user input
-	*/
-	string get_input()
-	{
-		string resp;
-		cout << ">>: ";
-		std::getline(cin, resp);
-
-		return resp;
-	}
-
-
-	/**
 	gets all of the names from the .txt file
 	*/
 	std::vector<string> input_data_from_file()
@@ -174,6 +166,11 @@ public:
 		*/
 
 		out_file.close();
+	}
+
+	void clear_cmd()
+	{
+		system("cls");
 	}
 
 	double get_pbeginner(){ return percent_beginner; }

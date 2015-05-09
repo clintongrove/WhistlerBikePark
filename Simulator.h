@@ -78,18 +78,33 @@ public:
 		Trailheads.push_back(Base1);
 		heads++;
 
+		// I think this will handles any user input for the percentages so that they all add to 1. if they don't then 
+		//   my probability calculations are inaccurate. 
+		while (true)
+		{
+			try
+			{
+				io->get_data();
+				break;
+			}
+			catch (std::invalid_argument exp)
+			{
+				cout << exp.what() << "Please try again.\n";
+				//io->get_data();
+				io->clear_cmd();
+			}
+		}
 
-		io->get_data(); // This is new
-
-		vector<string> names = io->input_data_from_file(); // This is new
-		riderGen = RiderGenerator(names, io->get_pbeginner, io->get_pintermediate, io->get_padvanced); // This is new
+		vector<string> names = io->input_data_from_file();
+		riderGen = RiderGenerator(names, io->get_pbeginner, io->get_pintermediate, io->get_padvanced);
 	}
 
 
 	/**
-	This is new as of 5/8/15
+		Simulator Deconstructor
+		Handles memory 
 	*/
-	~Simulator() // This is new
+	~Simulator() 
 	{
 		if (!(io == NULL))
 			delete io;
