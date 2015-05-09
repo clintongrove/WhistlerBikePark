@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <stdexcept>
 #include <set>
 //#include <ios>
 //#include <sstream>
@@ -47,11 +48,12 @@ public:
 		{
 			cout << "Enter the percentage of beginner riders: ";
 			cin >> percent_beginner;
+			if (percent_beginner > 1)
+				throw std::invalid_argument("Percent is too big.\n");
 		}
 		catch (std::invalid_argument exp)
 		{
-			cout << "Please input a value as a double between 0 and 1.\n";
-			cout << exp.what() << std::endl;
+			cout << exp.what() << "Please input a value as a double between 0 and 1.\n";
 			input_beginner_percent();
 		}
 	}
@@ -65,11 +67,12 @@ public:
 		{
 			cout << "Enter the percentage of intermediate riders: ";
 			cin >> percent_intermediate;
+			if (percent_intermediate > 1)
+				throw std::invalid_argument("Percent is too big.\n");
 		}
 		catch (std::invalid_argument exp)
 		{
-			cout << "Please input a value as a double between 0 and 1.\n";
-			cout << exp.what() << std::endl;
+			cout << exp.what() << "Please input a value as a double between 0 and 1.\n";
 			input_intermediate_percent();
 		}
 	}
@@ -83,11 +86,12 @@ public:
 		{
 			cout << "Enter the percentage of advanced riders: ";
 			cin >> percent_advanced;
+			if (percent_advanced > 1)
+				throw std::invalid_argument("Percent is too big.\n");
 		}
 		catch (std::invalid_argument exp)
 		{
-			cout << "Please input a value as a double between 0 and 1.\n";
-			cout << exp.what() << std::endl;
+			cout << exp.what() << "Please input a value as a double between 0 and 1.\n";
 			input_advanced_percent();
 		}
 	}
@@ -113,6 +117,44 @@ public:
 		}
 	}
 
+
+	/**
+		Prints the options that the user can do.
+	*/
+	void print_menu()
+	{
+		cout << "Please choose what you would like to do.\n";
+		cout << "1. Run simulation\n";
+		cout << "2. Search for stats\n";
+
+	}
+
+	/**
+		Gets input from the user
+	*/
+	string get_input()
+	{
+		string resp;
+		cout << ">>: ";
+		cin >> resp;
+		return resp;
+	}
+
+	void check_input(string resp)
+	{
+		if (resp == "1" || resp == "run simulation" || resp == "Run Simulation")
+		{
+			//FIXME
+		}
+		else if (resp == "2" || resp == "search" || resp == "Resp")
+		{
+			//FIXME
+		}
+		else
+		{
+			//FIXME
+		}
+	}
 
 	/**
 	gets all of the names from the .txt file

@@ -124,7 +124,7 @@ public:
 
 	void search(string name)
 	{
-
+		std::cout << riders.find(name)->second->toString() << endl;
 	}
 };
 

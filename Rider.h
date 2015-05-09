@@ -8,7 +8,7 @@ class Bicycle;
 class Rider{
 	friend class Trailhead;
 public:
-	bool onMountaion = false; // This is new
+	bool onMountaion = false; 
 	std::string name; // Do we need this? We have this Rider* in a map with the name as the key
 	double skill_lvl;
 	double endurance;
@@ -16,23 +16,28 @@ public:
 	Ticket pass;
 	int arrival_time;
 	int departure_time;
+
 	Rider(double skill, double enduro, int ticket){
 		this->skill_lvl = skill;
 		this->endurance = enduro;
 	}
-	~Rider() //This is new
+
+	~Rider()
 	{
 		if (!(whip == NULL))
 			delete whip;
 	}
+
 	virtual Trail* choice(std::set<Trail*> trails) = 0;
 	virtual double run(Trail*t) = 0;
 
-	/*string toString()
+	string toString()
 	{
-	return "Skill Level: " + skill_lvl + "\nEndurance: " + endurance + "\nBicycle: " + whip + "\nTotal Time: "
-	+ (departure_time - arrival_time) + "\n";
-	}*/
+		string s;
+		s.append("Skill Level: " + to_string(skill_lvl) + "\nEndurance: " + to_string(endurance)  + "\nTotal Time: "
+			+ to_string(departure_time - arrival_time) + "\n");
+		return s;
+	}
 };
 
 #endif

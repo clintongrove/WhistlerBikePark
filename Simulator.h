@@ -12,8 +12,8 @@
 #include "HardTrail.h"
 #include "Rider.h"
 #include "ChairLift.h"
-#include "IO.h" // This is new
-#include "RiderGenerator.h" // This is new
+#include "IO.h" 
+#include "RiderGenerator.h" 
 class BeginnerRider;
 class Trailhead;
 class Trail;
@@ -31,8 +31,8 @@ private:
 	int clock;
 	int weeks = 2;
 	int total_time = weeks * 60 * 24 * 7;
-	IO *io; // This is new
-	RiderGenerator riderGen; // this is new
+	IO *io; 
+	RiderGenerator riderGen; 
 public:
 	Simulator(){
 		Trailhead *Base = new Trailhead();
@@ -77,6 +77,7 @@ public:
 		heads++;
 		Trailheads.push_back(Base1);
 		heads++;
+
 
 		// I think this will handles any user input for the percentages so that they all add to 1. if they don't then 
 		//   my probability calculations are inaccurate. 
