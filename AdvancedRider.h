@@ -16,15 +16,15 @@ class AdvancedRider : virtual public Rider{
 public:
 	std::string name;
 	double skill_lvl;
-	double endurance;	
+	double endurance;
 	DHBicycle whip;
 	Ticket pass;
-	AdvancedRider(double skill, double enduro, int ticket) :Rider(skill, enduro,ticket){
+	AdvancedRider(double skill, double enduro, int ticket) :Rider(skill, enduro, ticket){
 		this->skill_lvl = skill;
 		this->endurance = enduro;
 		pass = Ticket(ticket);
 	}
-	
+
 	int arrival_time;
 	int departure_time;
 	Trail *choice(std::set<Trail*>the_trails){

@@ -74,5 +74,8 @@
     <ClInclude Include="RiderGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="IO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

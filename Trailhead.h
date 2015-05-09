@@ -16,8 +16,8 @@ class Rider;
 class Trailhead{
 public:
 	ChairLift *lift;
-	int num_served=0;
-	int total_wait=0;
+	int num_served = 0;
+	int total_wait = 0;
 	std::queue<Rider*> trail_line;
 	std::set<Trail*> the_trails;
 	Trailhead(){ std::cout << " Trailhead default Constructed!" << std::endl; };
@@ -25,7 +25,7 @@ public:
 		this->the_trails = trails;
 		lift->destination = next;
 		lift->origin = this;
-		std::cout <<" Trailhead Constructed!"<< std::endl;
+		std::cout << " Trailhead Constructed!" << std::endl;
 	}
 	void update(int clock){
 		if (!trail_line.empty()){
@@ -36,18 +36,18 @@ public:
 			wait_time = clock - current->arrival_time;//updating ticket with current riders wait time
 			current->pass.UpdateTrailhead(wait_time, this);
 
-			
+
 			double run_time = current->run(chosen);//calculate run time 
-			current->pass.UpdateTrail(run_time,chosen);//record run time
+			current->pass.UpdateTrail(run_time, chosen);//record run time
 			trail_line.pop();
 			num_served++;
 			total_wait += wait_time;
 			current->arrival_time = clock;
 			current->departure_time = clock;
 			chosen->destination->lift->the_queue.push(current);
-			}
-
 		}
+
+	}
 
 };
 

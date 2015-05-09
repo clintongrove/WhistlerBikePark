@@ -90,6 +90,7 @@
     <ClInclude Include="EasyTrail.h" />
     <ClInclude Include="HardTrail.h" />
     <ClInclude Include="IntermediateRider.h" />
+    <ClInclude Include="IO.h" />
     <ClInclude Include="MedTrail.h" />
     <ClInclude Include="Mountain.h" />
     <ClInclude Include="Rider.h" />
