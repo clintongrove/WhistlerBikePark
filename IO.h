@@ -15,6 +15,7 @@ using std::cout;
 using std::string;
 using std::cin;
 using std::fstream;
+using std::vector;
 
 class IO
 {
@@ -25,6 +26,8 @@ private:
 	double arrival_rate;
 
 public:
+	IO(){}
+
 	/**
 	Gets the data from the user.
 	*/
@@ -123,12 +126,15 @@ public:
 	/**
 		Prints the options that the user can do.
 	*/
-	void print_menu()
+	string print_menu()
 	{
 		cout << "Please choose what you would like to do.\n";
 		cout << "1. Run simulation\n";
 		cout << "2. Search for stats\n";
+		cout << "3. Run Again\n";
 
+		string resp = get_input();
+		return resp;
 	}
 
 	/**
@@ -142,39 +148,26 @@ public:
 		return resp;
 	}
 
-	void check_input(string resp)
-	{
-		if (resp == "1" || resp == "run simulation" || resp == "Run Simulation")
-		{
-			//FIXME
-		}
-		else if (resp == "2" || resp == "search" || resp == "Resp")
-		{
-			//FIXME
-		}
-		else
-		{
-			//FIXME
-		}
-	}
 
 	/**
 	gets all of the names from the .txt file
 	*/
 	std::vector<string> input_data_from_file()
 	{
+		//char* s = new char();
 		string s;
 		std::vector<string> names;
 
 		fstream myfile;
+		std::streamsize n = 100;
 
 		try
 		{
-			myfile.open("resdients_273ville.txt", std::ios::in);
+			myfile.open("residents_273ville.txt", std::ios::in);
 
 			while (!myfile.eof())
 			{
-				std::getline(cin, s);
+				std::getline(myfile, s);
 				names.push_back(s);
 			}
 
@@ -184,7 +177,12 @@ public:
 		{
 			std::cout << "Cannot find the file" << std::endl;
 		}
+		catch (...)
+		{
+			std::cout << "Don't know what is happening.\n" << std::endl;
+		}
 
+		//delete s;
 		return names;
 	}
 

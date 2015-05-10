@@ -12,7 +12,6 @@
 #include "AdvancedRider.h"
 #include "BeginnerRider.h"
 #include "IntermediateRider.h"
-#include "IO.h"
 /*class HardTrail;
 class MedTrail;
 class EasyTrail;
@@ -27,7 +26,6 @@ private:
 	std::vector<string> names;
 	double pbeginner, padvanced, pintermediate;
 	int ticket_no;
-	IO *io = NULL;
 public:
 	RiderGenerator(){}
 	RiderGenerator(std::vector<string> DataVille, double x, double y, double z) : pbeginner(x), pintermediate(y),
@@ -44,9 +42,6 @@ public:
 		{
 			delete it->second;
 		}
-
-		if (!(io == NULL))
-			delete io;
 	}
 
 

@@ -32,7 +32,8 @@ private:
 	int weeks = 2;
 	int total_time = weeks * 60 * 24 * 7;
 	IO io; 
-	RiderGenerator riderGen; 
+	RiderGenerator *riderGen; 
+	bool again = true;
 public:
 	Simulator(){
 		Trailhead *Base = new Trailhead();
@@ -78,26 +79,64 @@ public:
 		Trailheads.push_back(Base1);
 		heads++;
 
-		io = new IO();
-		// I think this will handles any user input for the percentages so that they all add to 1. if they don't then 
-		//   my probability calculations are inaccurate. 
-		while (true)
+		//io = new IO();
+
+		while (again)
 		{
-			try
+			std::string resp = io.print_menu();
+
+			if (resp == "1" || resp == "run simulation" || resp == "Run Simulation")
 			{
-				io.get_data();
-				break;
+				// I think this will handles any user input for the percentages so that they all add to 1. if they don't then 
+				//   my probability calculations are inaccurate. 
+				while (again)
+				{
+					try
+					{
+						io.get_data();
+						again = false;
+						//break;
+					}
+					catch (std::invalid_argument exp)
+					{
+						cout << exp.what() << "Please try again.\n" << std::endl;
+						//io->get_data();
+						io.clear_cmd();
+					}
+					catch (...)
+					{
+						cout << "Please try again.\n" << std::endl;
+						io.clear_cmd();
+					}
+				}
+
+				again = true;
+
+				std::vector<std::string> names = io.input_data_from_file();
+				riderGen = new RiderGenerator(names, io.get_pbeginner(), io.get_pintermediate(), io.get_padvanced());
+
+				run_simulation();
 			}
-			catch (std::invalid_argument exp)
+			else if (resp == "2" || resp == "search" || resp == "Resp")
 			{
-				cout << exp.what() << "Please try again.\n";
-				//io->get_data();
-				io.clear_cmd();
+				if (riderGen == NULL)
+				{
+					cout << "The Simulation has not been run.\n" << std::endl;
+				}
+			}
+			else if (resp == "3" || resp == "run again" || resp == "Run Again")
+			{
+				again = false;
+			}
+			else
+			{
+				std::cout << "Unknown command. Try again.\n" << std::endl;
 			}
 		}
 
-		std::vector<std::string> names = io.input_data_from_file();
-		riderGen = RiderGenerator(names, io.get_pbeginner(), io.get_pintermediate(), io.get_padvanced());
+		std::cout << "For some reason the program hits here.\n" << std::endl;
+
+
 	}
 
 
@@ -107,6 +146,8 @@ public:
 	*/
 	~Simulator() 
 	{
+		if (riderGen == NULL)
+			delete riderGen;
 
 	}
 
@@ -124,6 +165,8 @@ public:
 
 
 		}
+
+		std::cout << "Simulation Done\n" << std::endl;
 
 	}
 
