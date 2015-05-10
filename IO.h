@@ -131,7 +131,7 @@ public:
 		cout << "Please choose what you would like to do.\n";
 		cout << "1. Run simulation\n";
 		cout << "2. Search for stats\n";
-		cout << "3. Run Again\n";
+		cout << "3. Exit\n";
 
 		string resp = get_input();
 		return resp;
@@ -208,6 +208,12 @@ public:
 		*/
 
 		out_file.close();
+	}
+
+	string search_name()
+	{
+		cout << "Enter name to search: \n";
+		return get_input();
 	}
 
 	void clear_cmd()

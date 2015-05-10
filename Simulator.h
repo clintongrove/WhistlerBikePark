@@ -123,8 +123,13 @@ public:
 				{
 					cout << "The Simulation has not been run.\n" << std::endl;
 				}
+				else
+				{
+					std::string s = io.search_name();
+					riderGen->search(s);
+				}
 			}
-			else if (resp == "3" || resp == "run again" || resp == "Run Again")
+			else if (resp == "3" || resp == "exit" || resp == "Exit")
 			{
 				again = false;
 			}
@@ -133,10 +138,6 @@ public:
 				std::cout << "Unknown command. Try again.\n" << std::endl;
 			}
 		}
-
-		std::cout << "For some reason the program hits here.\n" << std::endl;
-
-
 	}
 
 
@@ -166,7 +167,7 @@ public:
 
 		}
 
-		std::cout << "Simulation Done\n" << std::endl;
+		std::cout << "\n----------Simulation Done----------\n" << std::endl;
 
 	}
 

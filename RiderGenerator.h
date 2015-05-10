@@ -119,7 +119,12 @@ public:
 
 	void search(string name)
 	{
-		std::cout << riders.find(name)->second->toString() << std::endl;
+		std::string s = riders.find(name)->second->toString();
+
+		if (s == " ")
+			std::cout << "Don't recognize that name.\n";
+		else
+			std::cout << s << std::endl << std::endl;
 	}
 };
 

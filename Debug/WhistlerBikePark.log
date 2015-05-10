@@ -1,4 +1,4 @@
-﻿Build started 5/10/2015 4:09:22 PM.
+﻿Build started 5/10/2015 4:23:55 PM.
      1>Project "C:\Users\Joseph\Documents\GitHub\WhistlerBikePark\WhistlerBikePark.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          E:\Programs\Visual Studios 13\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BikePark.cpp
@@ -30,4 +30,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.97
+Time Elapsed 00:00:02.03
