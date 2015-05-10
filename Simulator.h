@@ -31,7 +31,7 @@ private:
 	int clock;
 	int weeks = 2;
 	int total_time = weeks * 60 * 24 * 7;
-	IO *io; 
+	IO io; 
 	RiderGenerator riderGen; 
 public:
 	Simulator(){
@@ -85,19 +85,19 @@ public:
 		{
 			try
 			{
-				io->get_data();
+				io.get_data();
 				break;
 			}
 			catch (std::invalid_argument exp)
 			{
 				cout << exp.what() << "Please try again.\n";
 				//io->get_data();
-				io->clear_cmd();
+				io.clear_cmd();
 			}
 		}
 
-		std::vector<std::string> names = io->input_data_from_file();
-		riderGen = RiderGenerator(names, io->get_pbeginner(), io->get_pintermediate(), io->get_padvanced());
+		std::vector<std::string> names = io.input_data_from_file();
+		riderGen = RiderGenerator(names, io.get_pbeginner(), io.get_pintermediate(), io.get_padvanced());
 	}
 
 
@@ -107,8 +107,7 @@ public:
 	*/
 	~Simulator() 
 	{
-		if (!(io == NULL))
-			delete io;
+
 	}
 
 	void enter_data(){
