@@ -172,13 +172,22 @@ public:
 	}
 
 	void process_data(){
+		std::vector<int> Trailhead_num_served;
+		std::vector<int> Trailhead_total_wait;
+		std::vector<int> Chairlift_num_served;
+		std::vector<int> Chairlift_total_wait;
+
 		for (int i = 1; i < heads; i++){
-			std::cout << Trailheads[i]->num_served << Trailheads[i]->total_wait << std::endl;
+			Trailhead_num_served.push_back(Trailheads[i]->num_served); 
+			Trailhead_total_wait.push_back(Trailheads[i]->total_wait);
 		}
 		for (int i = 1; i < lifts; i++){
-			std::cout << Chairlifts[i]->num_served << Chairlifts[i]->total_wait << std::endl;
+			Chairlift_num_served.push_back(Chairlifts[i]->num_served);
+			Chairlift_total_wait.push_back(Chairlifts[i]->total_wait);
 		}
 
+
+		io.output_data_to_file(Trailhead_num_served, Trailhead_total_wait, Chairlift_num_served, Chairlift_total_wait);
 	}
 
 

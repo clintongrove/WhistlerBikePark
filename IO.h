@@ -190,8 +190,8 @@ public:
 	/**
 	Outputs the data that we are going to process to a file.
 	*/
-	void output_data_to_file(int average_wait_time_chairlifts, int total_wait_time_chairlifts,
-		int average_wait_time_trialheads, int total_wait_time_trailheads)
+	void output_data_to_file(vector<int> average_wait_time_chairlifts, vector<int> total_wait_time_chairlifts,
+		vector<int> average_wait_time_trailheads, vector<int> total_wait_time_trailheads)
 	{
 		fstream out_file;
 
@@ -202,10 +202,29 @@ public:
 		out_file << "Percentage of advancded riders: " << percent_advanced << std::endl;
 		out_file << std::endl;
 
-		/**FIX ME:
-		Need to implement a way to print out all of the data from Simulator::process_data
-		Probably use a vector for the parameters for this method. And then use for loops
-		*/
+		out_file << "Average wait time for trailheads.\n";
+		for (int i = 0; i < average_wait_time_trailheads.size(); i++)
+		{
+			out_file << average_wait_time_trailheads.[i] << endl;
+		}
+
+		out_file << "Total wait time for trailheads.\n";
+		for (int i = 0; i < total_wait_time_trailheads.size(); i++)
+		{
+			out_file << total_wait_time_trailheads.[i] << endl;
+		}
+
+		out_file << "Average wait time for trailheads.\n";
+		for (int i = 0; i < average_wait_time_chairlifts.size(); i++)
+		{
+			out_file << average_wait_time_chairlifts.[i] << endl;
+		}
+
+		out_file << "Total wait time for trailheads.\n";
+		for (int i = 0; i < total_wait_time_chairlifts.size(); i++)
+		{
+			out_file << total_wait_time_chairlifts.[i] << endl;
+		}
 
 		out_file.close();
 	}
