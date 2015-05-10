@@ -48,7 +48,7 @@ public:
 		try
 		{
 			cout << "Enter the percentage of beginner riders: ";
-			cin >> percent_beginner;
+			std::cin >> percent_beginner;
 			if (percent_beginner > 1)
 				throw std::invalid_argument("Percent is too big.\n");
 		}

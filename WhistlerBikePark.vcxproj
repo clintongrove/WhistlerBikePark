@@ -101,6 +101,9 @@
     <ClInclude Include="Trailhead.h" />
     <ClInclude Include="XCBicycle.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Data_to_graph.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
