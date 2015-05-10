@@ -78,7 +78,7 @@ public:
 		Trailheads.push_back(Base1);
 		heads++;
 
-
+		io = new IO();
 		// I think this will handles any user input for the percentages so that they all add to 1. if they don't then 
 		//   my probability calculations are inaccurate. 
 		while (true)
