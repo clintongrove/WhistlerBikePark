@@ -96,8 +96,8 @@ public:
 			}
 		}
 
-		vector<string> names = io->input_data_from_file();
-		riderGen = RiderGenerator(names, io->get_pbeginner, io->get_pintermediate, io->get_padvanced);
+		std::vector<std::string> names = io->input_data_from_file();
+		riderGen = RiderGenerator(names, io->get_pbeginner(), io->get_pintermediate(), io->get_padvanced());
 	}
 
 

@@ -3,6 +3,7 @@
 class Trail;
 class Bicycle;
 #include<iostream>
+#include <string>
 #include "Ticket.h"
 #include "Trail.h"
 class Rider{
@@ -31,11 +32,11 @@ public:
 	virtual Trail* choice(std::set<Trail*> trails) = 0;
 	virtual double run(Trail*t) = 0;
 
-	string toString()
+	std::string toString()
 	{
-		string s;
-		s.append("Skill Level: " + to_string(skill_lvl) + "\nEndurance: " + to_string(endurance)  + "\nTotal Time: "
-			+ to_string(departure_time - arrival_time) + "\n");
+		std::string s;
+		s.append("Skill Level: " + std::to_string(skill_lvl) + "\nEndurance: " + std::to_string(endurance)  + "\nTotal Time: "
+			+ std::to_string(departure_time - arrival_time) + "\n");
 		return s;
 	}
 };

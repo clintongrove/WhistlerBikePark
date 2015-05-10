@@ -6,6 +6,7 @@
 #include <vector>
 #include <stdexcept>
 #include <set>
+#include <string>
 //#include <ios>
 //#include <sstream>
 
@@ -135,8 +136,8 @@ public:
 	string get_input()
 	{
 		string resp;
-		cout << ">>: ";
-		cin >> resp;
+		std::cout << ">>: ";
+		std::cin >> resp;
 		return resp;
 	}
 
@@ -172,7 +173,7 @@ public:
 
 			while (!myfile.eof())
 			{
-				getline(cin, s);
+				std::getline(cin, s);
 				names.push_back(s);
 			}
 
@@ -180,7 +181,7 @@ public:
 		}
 		catch (std::exception exp)
 		{
-			cout << "Cannot find the file" << endl;
+			std::cout << "Cannot find the file" << std::endl;
 		}
 
 		return names;
