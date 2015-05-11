@@ -174,7 +174,7 @@ public:
 		double d = riderGen->next_double();
 		if (d < io.get_arrival_rate())
 		{
-			riderGen->createRider(clock);
+			Trailheads[0]->lift->the_queue.push(riderGen->createRider(clock));
 
 		}
 	}
