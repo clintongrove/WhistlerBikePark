@@ -22,11 +22,7 @@ public:
 	double endurance;
 	XCBicycle whip;
 	Ticket pass;
-	BeginnerRider(double skill, double enduro, int ticket) :Rider(skill, enduro, ticket){
-		this->skill_lvl = skill;
-		this->endurance = enduro;
-		pass = Ticket(ticket);
-	}
+	BeginnerRider(double skill, double enduro, int ticket, int clock) :Rider(skill, enduro, ticket, clock){}
 
 	int arrival_time;
 	int departure_time;

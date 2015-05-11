@@ -5,7 +5,7 @@ class Bicycle{
 public:
 	Bicycle(){}
 	virtual bool mechanical() = 0;
-	~Bicycle(){ delete this; }
+	//~Bicycle(){ delete this; }
 };
 
 #endif

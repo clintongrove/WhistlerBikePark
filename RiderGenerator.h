@@ -46,7 +46,7 @@ public:
 
 
 
-	Rider* createRider()
+	Rider* createRider(int clock)
 	{
 		int rider;
 		rider = rand() % names.size();
@@ -75,19 +75,19 @@ public:
 
 		if (who <= pbeginner)
 		{
-			r = new BeginnerRider(get_skill_level("beginner"), get_endurance("beginner"), ticket_no);
+			r = new BeginnerRider(get_skill_level("beginner"), get_endurance("beginner"), ticket_no, clock);
 			riders.insert(std::pair<string, Rider*>(random_name, r));
 			ticket_no++; 
 		}
 		else if (who <= (pbeginner + pintermediate) && who > pbeginner)
 		{
-			r = new IntermediateRider(get_skill_level("intermediate"), get_endurance("intermediate"), ticket_no);
+			r = new IntermediateRider(get_skill_level("intermediate"), get_endurance("intermediate"), ticket_no, clock);
 			riders.insert(std::pair<string, Rider*>(random_name, r));
 			ticket_no++;
 		}
 		else if (who > (pbeginner + pintermediate))
 		{
-			r = new AdvancedRider(get_skill_level("advanced"), get_endurance("advanced"), ticket_no);
+			r = new AdvancedRider(get_skill_level("advanced"), get_endurance("advanced"), ticket_no, clock);
 			riders.insert(std::pair<string, Rider*>(random_name, r));
 			ticket_no++;
 		}
@@ -119,12 +119,19 @@ public:
 
 	void search(string name)
 	{
-		std::string s = riders.find(name)->second->toString();
+		//std::string s = riders.find(name)->second->toString();
+		std::map<string, Rider*>::iterator it = riders.find(name);
+		std::string s = it->second->toString();
 
-		if (s == " ")
+		if (s == "")
 			std::cout << "Don't recognize that name.\n";
 		else
 			std::cout << s << std::endl << std::endl;
+	}
+
+	double next_double()
+	{
+		return double(rand()) / RAND_MAX;
 	}
 };
 

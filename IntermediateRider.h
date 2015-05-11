@@ -19,11 +19,7 @@ public:
 	double endurance;
 	AMBicycle whip;
 	Ticket pass;
-	IntermediateRider(double skill, double enduro, int ticket) :Rider(skill, enduro, ticket){
-		this->skill_lvl = skill;
-		this->endurance = enduro;
-		pass = Ticket(ticket);
-	}
+	IntermediateRider(double skill, double enduro, int ticket, int clock) :Rider(skill, enduro, ticket, clock){}
 
 	int arrival_time;
 	int departure_time;

@@ -10,7 +10,6 @@ class Rider{
 	friend class Trailhead;
 public:
 	bool onMountaion = false; 
-	std::string name; // Do we need this? We have this Rider* in a map with the name as the key
 	double skill_lvl;
 	double endurance;
 	Bicycle *whip;
@@ -18,9 +17,12 @@ public:
 	int arrival_time;
 	int departure_time;
 
-	Rider(double skill, double enduro, int ticket){
+	Rider(double skill, double enduro, int ticket, int clock){
 		this->skill_lvl = skill;
 		this->endurance = enduro;
+		this->arrival_time = clock;
+		this->pass = Ticket(ticket);
+
 	}
 
 	~Rider()

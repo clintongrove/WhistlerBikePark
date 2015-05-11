@@ -205,25 +205,25 @@ public:
 		out_file << "Average wait time for trailheads.\n";
 		for (int i = 0; i < average_wait_time_trailheads.size(); i++)
 		{
-			out_file << average_wait_time_trailheads.[i] << endl;
+			out_file << average_wait_time_trailheads[i] << std::endl;
 		}
 
 		out_file << "Total wait time for trailheads.\n";
 		for (int i = 0; i < total_wait_time_trailheads.size(); i++)
 		{
-			out_file << total_wait_time_trailheads.[i] << endl;
+			out_file << total_wait_time_trailheads[i] << std::endl;
 		}
 
 		out_file << "Average wait time for trailheads.\n";
 		for (int i = 0; i < average_wait_time_chairlifts.size(); i++)
 		{
-			out_file << average_wait_time_chairlifts.[i] << endl;
+			out_file << average_wait_time_chairlifts[i] << std::endl;
 		}
 
 		out_file << "Total wait time for trailheads.\n";
 		for (int i = 0; i < total_wait_time_chairlifts.size(); i++)
 		{
-			out_file << total_wait_time_chairlifts.[i] << endl;
+			out_file << total_wait_time_chairlifts[i] << std::endl;
 		}
 
 		out_file.close();
@@ -243,6 +243,7 @@ public:
 	double get_pbeginner(){ return percent_beginner; }
 	double get_pintermediate(){ return percent_intermediate; }
 	double get_padvanced(){ return percent_advanced; }
+	double get_arrival_rate(){ return arrival_rate; }
 
 };
 

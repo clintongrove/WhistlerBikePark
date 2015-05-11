@@ -140,7 +140,6 @@ public:
 		}
 	}
 
-
 	/**
 		Simulator Deconstructor
 		Handles memory 
@@ -149,6 +148,7 @@ public:
 	{
 		if (riderGen == NULL)
 			delete riderGen;
+		
 
 	}
 
@@ -157,6 +157,7 @@ public:
 	}
 	void run_simulation(){
 		for (clock = 0; clock < total_time; ++clock){
+			//random_arrival(clock);
 			for (int i = 1; i < heads; i++){
 				Trailheads[i]->update(clock);
 			}
@@ -169,6 +170,16 @@ public:
 
 		std::cout << "\n----------Simulation Done----------\n" << std::endl;
 
+	}
+
+	void random_arrival(int clock)
+	{
+		double d = riderGen->next_double();
+		if (d < io.get_arrival_rate())
+		{
+			riderGen->createRider(clock);
+
+		}
 	}
 
 	void process_data(){

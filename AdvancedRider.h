@@ -19,11 +19,7 @@ public:
 	double endurance;
 	DHBicycle whip;
 	Ticket pass;
-	AdvancedRider(double skill, double enduro, int ticket) :Rider(skill, enduro, ticket){
-		this->skill_lvl = skill;
-		this->endurance = enduro;
-		pass = Ticket(ticket);
-	}
+	AdvancedRider(double skill, double enduro, int ticket, int clock) :Rider(skill, enduro, ticket, clock){}
 
 	int arrival_time;
 	int departure_time;
