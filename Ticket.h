@@ -25,6 +25,51 @@ public:
 	void UpdateChairLift(int wait_time, ChairLift* lift){
 		ChairLiftRecords.insert(std::pair<int, ChairLift*>(wait_time, lift));
 	}
+
+	double avg_wait_trailheads()
+	{
+		int tot = 0;
+		int num = 0;
+		std::map<int, Trailhead*>::iterator it = TrailheadRecords.begin();
+
+		for (it; it != TrailheadRecords.end(); it++){
+			tot += it->first;
+			num++;
+		}
+		return tot / num;
+	}
+	double tot_wait_trailheads()
+	{
+		int tot = 0;
+		std::map<int, Trailhead*>::iterator it = TrailheadRecords.begin();
+
+		for (it; it != TrailheadRecords.end(); it++){
+			tot += it->first;
+		}
+		return tot;
+	}
+	double avg_wait_chairlifts()
+	{
+		int tot = 0;
+		int num = 0;
+		std::map<int, ChairLift*>::iterator it = ChairLiftRecords.begin();
+
+		for (it; it != ChairLiftRecords.end(); it++){
+			tot += it->first;
+			num++;
+		}
+		return tot/num;
+	}
+	double tot_wait_chairlifts()
+	{
+		int tot = 0;
+		std::map<int, ChairLift*>::iterator it = ChairLiftRecords.begin();
+
+		for (it; it != ChairLiftRecords.end(); it++){
+			tot += it->first;
+		}
+		return tot;
+	}
 };
 
 #endif

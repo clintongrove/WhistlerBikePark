@@ -131,7 +131,8 @@ public:
 		cout << "Please choose what you would like to do.\n";
 		cout << "1. Run simulation\n";
 		cout << "2. Search for stats\n";
-		cout << "3. Exit\n";
+		cout << "3. Output data to file\n";
+		cout << "4. Exit\n";
 
 		string resp = get_input();
 		return resp;
@@ -191,7 +192,7 @@ public:
 	Outputs the data that we are going to process to a file.
 	*/
 	void output_data_to_file(vector<int> average_wait_time_chairlifts, vector<int> total_wait_time_chairlifts,
-		vector<int> average_wait_time_trailheads, vector<int> total_wait_time_trailheads)
+		vector<int> average_wait_time_trailheads, vector<int> total_wait_time_trailheads, vector<int> ticket_stats)
 	{
 		fstream out_file;
 
@@ -225,6 +226,14 @@ public:
 		{
 			out_file << total_wait_time_chairlifts[i] << std::endl;
 		}
+
+		out_file << "Beginner Rider average trailhead wait time: " << ticket_stats[0] << std::endl;
+		out_file << "Beginner Rider average chairlift wait time: " << ticket_stats[1] << std::endl;
+		out_file << "Intermdediate Rider average trailhead wait time: " << ticket_stats[2] << std::endl;
+		out_file << "Intermdediate Rider average chairlift wait time: " << ticket_stats[3] << std::endl;
+		out_file << "Advanced Rider average trailhead wait time: " << ticket_stats[4] << std::endl;
+		out_file << "Advanced Rider average chairlift wait time: " << ticket_stats[5] << std::endl;
+
 
 		out_file.close();
 	}

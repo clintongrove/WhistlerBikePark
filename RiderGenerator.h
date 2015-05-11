@@ -121,6 +121,51 @@ public:
 			return rand() % 3 + 7;
 	}
 
+	std::vector<int> get_ticket_stats()
+	{ 
+		std::vector<int> vec;
+		int BRider_avg_trailhead_wait = 0;
+		int BRider_total_trailhead_wait = 0;
+		int BRider_avg_chairlift_wait = 0;
+		int BRider_total_chairlift_wait = 0;
+		int IRider_avg_trailhead_wait = 0;
+		int IRider_total_trailhead_wait = 0;
+		int IRider_avg_chairlift_wait = 0;
+		int IRider_total_chairlift_wait = 0;
+		int ARider_avg_trailhead_wait = 0;
+		int ARider_total_trailhead_wait = 0;
+		int ARider_avg_chairlift_wait = 0;
+		int ARider_total_chairlift_wait = 0;
+		int Bnum = 0;
+		int Inum = 0;
+		int Anum = 0;
+		for (std::map<string, Rider*>::iterator it = riders.begin(); it != riders.end(); ++it){
+			if (typeid(it->second) == typeid(BeginnerRider)){
+				BRider_total_chairlift_wait+=it->second->pass.tot_wait_chairlifts();
+				BRider_total_trailhead_wait += it->second->pass.tot_wait_trailheads();
+				Bnum++;
+			}
+			if (typeid(it->second) == typeid(IntermediateRider)){
+				IRider_total_chairlift_wait += it->second->pass.tot_wait_chairlifts();
+				IRider_total_trailhead_wait += it->second->pass.tot_wait_trailheads();
+				Inum++;
+			}
+			if (typeid(it->second) == typeid(AdvancedRider)){
+				ARider_total_chairlift_wait += it->second->pass.tot_wait_chairlifts();
+				ARider_total_trailhead_wait += it->second->pass.tot_wait_trailheads();
+				Anum++;
+			}
+			vec.push_back(BRider_avg_trailhead_wait = BRider_total_trailhead_wait/Bnum);
+			vec.push_back(BRider_avg_chairlift_wait = BRider_total_chairlift_wait / Bnum);
+			vec.push_back(IRider_avg_trailhead_wait = IRider_total_trailhead_wait / Inum);
+			vec.push_back(IRider_avg_chairlift_wait = IRider_total_chairlift_wait / Inum);
+			vec.push_back(ARider_avg_trailhead_wait = ARider_total_trailhead_wait / Anum);
+			vec.push_back(ARider_avg_chairlift_wait = ARider_total_chairlift_wait / Anum);
+			
+		}
+		return vec;
+	}
+
 	void search(string name)
 	{
 		//std::string s = riders.find(name)->second->toString();

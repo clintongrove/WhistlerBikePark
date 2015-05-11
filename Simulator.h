@@ -130,9 +130,13 @@ public:
 					riderGen->search(s);
 				}
 			}
-			else if (resp == "3" || resp == "exit" || resp == "Exit")
+			else if (resp == "4" || resp == "exit" || resp == "Exit")
 			{
 				again = false;
+			}
+			else if (resp == "3" || resp == "output data" || resp == "Output Data")
+			{
+				process_data();
 			}
 			else
 			{
@@ -185,7 +189,10 @@ public:
 		std::vector<int> Trailhead_total_wait;
 		std::vector<int> Chairlift_num_served;
 		std::vector<int> Chairlift_total_wait;
+		std::vector<int> ticket_stats;
 
+		ticket_stats = riderGen->get_ticket_stats();
+		
 		for (int i = 1; i < heads; i++){
 			Trailhead_num_served.push_back(Trailheads[i]->num_served); 
 			Trailhead_total_wait.push_back(Trailheads[i]->total_wait);
@@ -196,7 +203,7 @@ public:
 		}
 
 
-		io.output_data_to_file(Trailhead_num_served, Trailhead_total_wait, Chairlift_num_served, Chairlift_total_wait);
+		io.output_data_to_file(Trailhead_num_served, Trailhead_total_wait, Chairlift_num_served, Chairlift_total_wait, ticket_stats);
 	}
 
 
