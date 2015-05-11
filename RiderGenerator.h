@@ -8,6 +8,7 @@
 #include <iterator>
 #include <vector>
 #include <string>
+#include <time.h>
 #include "Rider.h"
 #include "AdvancedRider.h"
 #include "BeginnerRider.h"
@@ -26,6 +27,7 @@ private:
 	std::vector<string> names;
 	double pbeginner, padvanced, pintermediate;
 	int ticket_no;
+	Rider *r = NULL;
 public:
 	RiderGenerator(){}
 	RiderGenerator(std::vector<string> DataVille, double x, double y, double z) : pbeginner(x), pintermediate(y),
@@ -42,6 +44,9 @@ public:
 		{
 			delete it->second;
 		}
+
+		if (r == NULL)
+			delete r;
 	}
 
 
@@ -71,7 +76,6 @@ public:
 		}
 
 		double who = ((double)rand() / RAND_MAX); // makes a double between 0 and 1
-		Rider *r = NULL;
 
 		if (who <= pbeginner)
 		{
@@ -92,7 +96,7 @@ public:
 			ticket_no++;
 		}
 
-		delete r;
+		//delete r;
 
 		return riders.find(random_name)->second;
 	}
@@ -121,12 +125,11 @@ public:
 	{
 		//std::string s = riders.find(name)->second->toString();
 		std::map<string, Rider*>::iterator it = riders.find(name);
-		std::string s = it->second->toString();
 
-		if (s == "")
-			std::cout << "Don't recognize that name.\n";
+		if (it == riders.end())
+			std::cout << "Don't recognize that name.\n" <<std::endl;
 		else
-			std::cout << s << std::endl << std::endl;
+			std::cout << it->second->toString() << std::endl << std::endl;
 	}
 
 	double next_double()

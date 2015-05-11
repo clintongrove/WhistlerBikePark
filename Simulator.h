@@ -30,7 +30,8 @@ private:
 	std::vector<ChairLift*> Chairlifts;
 	int clock;
 	int weeks = 2;
-	int total_time = weeks * 60 * 24 * 7;
+	//int total_time = weeks * 60 * 24 * 7;
+	int total_time = 60;
 	IO io; 
 	RiderGenerator *riderGen; 
 	bool again = true;
