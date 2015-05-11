@@ -152,12 +152,9 @@ public:
 
 	}
 
-	void enter_data(){
-
-	}
 	void run_simulation(){
 		for (clock = 0; clock < total_time; ++clock){
-			//random_arrival(clock);
+			random_arrival(clock);
 			for (int i = 1; i < heads; i++){
 				Trailheads[i]->update(clock);
 			}

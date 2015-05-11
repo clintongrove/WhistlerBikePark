@@ -71,7 +71,7 @@ public:
 		}
 
 		double who = ((double)rand() / RAND_MAX); // makes a double between 0 and 1
-		Rider *r;
+		Rider *r = NULL;
 
 		if (who <= pbeginner)
 		{
