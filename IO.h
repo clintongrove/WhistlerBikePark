@@ -37,7 +37,7 @@ public:
 		input_intermediate_percent();
 		input_advanced_percent();
 
-		if (!(get_pbeginner() + get_pintermediate() + get_padvanced()) == 1)
+		if (!(get_pbeginner() + get_pintermediate() + get_padvanced() == 1))
 			throw std::invalid_argument("Percentages don't add to 1.\n");
 
 		input_arrival_rate();
@@ -132,7 +132,8 @@ public:
 		cout << "1. Run simulation\n";
 		cout << "2. Search for stats\n";
 		cout << "3. Output data to file\n";
-		cout << "4. Exit\n";
+		cout << "4. Print Riders\n";
+		cout << "5. Exit\n";
 
 		string resp = get_input();
 		return resp;
@@ -145,7 +146,10 @@ public:
 	{
 		string resp;
 		std::cout << ">>: ";
-		std::cin >> resp;
+		std::getline(cin, resp);
+
+		std::cin.clear();
+		//std::cin.ignore(INT_MAX, '\n');
 		return resp;
 	}
 

@@ -166,6 +166,8 @@ public:
 		return vec;
 	}
 
+	std::vector<string> get_names(){ return names; }
+
 	void search(string name)
 	{
 		//std::string s = riders.find(name)->second->toString();

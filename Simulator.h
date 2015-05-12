@@ -96,13 +96,12 @@ public:
 					{
 						io.get_data();
 						again = false;
-						//break;
 					}
 					catch (std::invalid_argument exp)
 					{
+						io.clear_cmd();
 						cout << exp.what() << "Please try again.\n" << std::endl;
 						//io->get_data();
-						io.clear_cmd();
 					}
 					catch (...)
 					{
@@ -137,6 +136,15 @@ public:
 			else if (resp == "3" || resp == "output data" || resp == "Output Data")
 			{
 				process_data();
+			}
+			else if (resp == "5" || resp == "print" || resp == "Print")
+			{
+				std::vector<string> names = riderGen->get_names();
+
+				for (int i = 0; i < names.size(); i++)
+				{
+					std::cout << names[i] << std::endl;
+				}
 			}
 			else
 			{
