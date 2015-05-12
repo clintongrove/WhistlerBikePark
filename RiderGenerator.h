@@ -166,7 +166,19 @@ public:
 		return vec;
 	}
 
-	std::vector<string> get_names(){ return names; }
+	std::vector<string> get_names()
+	{
+		std::vector<string> riders_visited;
+
+		std::map<string, Rider*>::iterator it = riders.begin();
+
+		for (it; it != riders.end(); it++)
+		{
+			riders_visited.push_back(it->first);
+		}
+
+		return riders_visited;
+	}
 
 	void search(string name)
 	{

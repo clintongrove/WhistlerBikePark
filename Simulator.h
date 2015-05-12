@@ -135,15 +135,28 @@ public:
 			}
 			else if (resp == "3" || resp == "output data" || resp == "Output Data")
 			{
-				process_data();
+				if (riderGen == NULL)
+				{
+					cout << "The Simulation has not been run.\n" << std::endl;
+				}
+				else
+				{
+					process_data();
+				}
+
 			}
 			else if (resp == "5" || resp == "print" || resp == "Print")
 			{
-				std::vector<string> names = riderGen->get_names();
-
-				for (int i = 0; i < names.size(); i++)
+				if (riderGen == NULL)
 				{
-					std::cout << names[i] << std::endl;
+					cout << "The Simulation has not been run.\n" << std::endl;
+				}
+				else
+				{
+					std::vector<string> names = riderGen->get_names();
+
+					for (int i = 0; i < names.size(); i++)
+						std::cout << names[i] << std::endl;
 				}
 			}
 			else
