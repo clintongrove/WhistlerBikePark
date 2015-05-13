@@ -11,15 +11,12 @@ class HardTrail;
 #include "Trail.h"
 #include "AMBicycle.h"
 #include "Ticket.h"
-class IntermediateRider : virtual public Rider{
-	friend class Trailhead;
+class IntermediateRider : public Rider{
+friend class Trailhead;
 public:
-	std::string name;
-	double skill_lvl;
-	double endurance;
-	AMBicycle whip;
-	Ticket pass;
-	IntermediateRider(double skill, double enduro, int ticket, int clock) :Rider(skill, enduro, ticket, clock){}
+	IntermediateRider(double skill, double enduro, int ticket, int clock) :Rider(skill, enduro, ticket, clock){
+		whip = new AMBicycle();
+	}
 
 	int arrival_time;
 	int departure_time;

@@ -185,12 +185,11 @@ public:
 		std::map<string, Rider*>::iterator it = riders.find(name);
 		if (it == riders.end()){
 		std::cout << "Don't recognize that name.\n" << std::endl;
-		it = riders.begin();
-		std::cout << it->first << std::endl << std::endl;
 	}
-		else
+		else{
 			std::map<string, Rider*>::iterator it = riders.find(name);
 			std::cout << it->second->toString() << std::endl << std::endl;
+		}
 	}
 
 	double next_double()

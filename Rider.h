@@ -8,15 +8,15 @@ class Bicycle;
 #include "Ticket.h"
 #include "Trail.h"
 class Rider{
-	friend class Trailhead;
+friend class Trailhead;
 public:
 	bool onMountaion = false; 
 	double skill_lvl;
 	double endurance;
 	Bicycle *whip;
 	Ticket pass;
-	int arrival_time;
-	int departure_time;
+	int arrival_time=0;
+	int departure_time=0;
 
 	Rider(double skill, double enduro, int ticket, int clock){
 		this->skill_lvl = skill;

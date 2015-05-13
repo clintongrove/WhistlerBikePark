@@ -43,9 +43,9 @@ public:
 
 		std::set<Trail*> set1;
 		std::set<Trail*>::iterator it = set1.begin();
-		Trail *BlackAdder = new EasyTrail(Base, Base1, 6.0, 3.0);
-		Trail *DaimondBlack = new MedTrail(Base, Base1, 7.0, 4.0);
-		Trail *CottonMouth = new HardTrail(Base, Base1, 8.0, 5.0);
+		Trail *BlackAdder = new EasyTrail(Base1, Base,6.0, 3.0);
+		Trail *DaimondBlack = new MedTrail(Base1, Base, 7.0, 4.0);
+		Trail *CottonMouth = new HardTrail(Base1, Base, 8.0, 5.0);
 		set1.insert(it, BlackAdder);
 		set1.insert(it, DaimondBlack);
 		set1.insert(it, CottonMouth);
@@ -190,13 +190,13 @@ public:
 			for (int i = 1; i < heads; i++){
 				Trailheads[i]->update(clock);
 			}
-			for (int i = 1; i < lifts; i++){
+			for (int i = 0; i < lifts; i++){
 				Chairlifts[i]->update(clock);
 			}
 
 
 		}
-		io.clear_cmd();
+		//io.clear_cmd();
 		std::cout << "\n----------Simulation Done----------\n" << std::endl;
 
 	}

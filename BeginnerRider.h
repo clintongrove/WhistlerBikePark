@@ -15,17 +15,9 @@ class EasyTrail;
 #include "Ticket.h"
 #include<time.h>
 class BeginnerRider : public Rider{
-	friend class Trailhead;
+friend class Trailhead;
 public:
-	std::string name;
-	double skill_lvl;
-	double endurance;
-	XCBicycle whip;
-	Ticket pass;
-	BeginnerRider(double skill, double enduro, int ticket, int clock) :Rider(skill, enduro, ticket, clock){}
-
-	int arrival_time;
-	int departure_time;
+	BeginnerRider(double skill, double enduro, int ticket, int clock) :Rider(skill, enduro, ticket, clock){ whip = new XCBicycle(); }
 	Trail* choice(std::set<Trail*>the_trails){
 		std::vector<Trail*> rider_trails;
 		for (std::set<Trail*>::iterator it = the_trails.begin(); it != the_trails.end(); it++){
