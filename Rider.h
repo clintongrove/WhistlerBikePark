@@ -36,9 +36,10 @@ public:
 
 	std::string toString()
 	{
+		double d = pass.tot_wait_chairlifts() + pass.tot_wait_trailheads();
 		std::string s;
-		s.append("Skill Level: " + std::to_string(skill_lvl) + "\nEndurance: " + std::to_string(endurance)  + "\nTotal Time: "
-			+ std::to_string(departure_time - arrival_time) + "\n");
+		s.append("Skill Level: " + std::to_string((int)skill_lvl) + "\nEndurance: " + std::to_string((int)endurance)  + "\nTotal Wait Time: "
+			+ std::to_string((int)d) + "\n");
 		return s;
 	}
 };

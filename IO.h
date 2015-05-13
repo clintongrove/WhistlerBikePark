@@ -148,8 +148,6 @@ public:
 		std::cout << ">>: ";
 		std::getline(cin, resp);
 
-		std::cin.clear();
-		//std::cin.ignore(INT_MAX, '\n');
 		return resp;
 	}
 
