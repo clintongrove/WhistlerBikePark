@@ -1,4 +1,4 @@
-﻿Build started 5/12/2015 4:55:16 PM.
+﻿Build started 5/12/2015 5:00:22 PM.
      1>Project "C:\Users\Joseph\Documents\GitHub\WhistlerBikePark\WhistlerBikePark.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          E:\Programs\Visual Studios 13\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BikePark.cpp
@@ -33,7 +33,7 @@
      1>c:\users\joseph\documents\github\whistlerbikepark\ridergenerator.h(150): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\joseph\documents\github\whistlerbikepark\ridergenerator.h(154): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\joseph\documents\github\whistlerbikepark\ridergenerator.h(155): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\joseph\documents\github\whistlerbikepark\simulator.h(158): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\joseph\documents\github\whistlerbikepark\simulator.h(162): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\joseph\documents\github\whistlerbikepark\ridergenerator.h(112): warning C4715: 'RiderGenerator::get_endurance' : not all control paths return a value
      1>c:\users\joseph\documents\github\whistlerbikepark\ridergenerator.h(122): warning C4715: 'RiderGenerator::get_skill_level' : not all control paths return a value
        Link:
@@ -43,4 +43,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.15
+Time Elapsed 00:00:02.04

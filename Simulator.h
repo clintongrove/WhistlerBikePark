@@ -88,6 +88,7 @@ public:
 
 			if (resp == "1" || resp == "run simulation" || resp == "Run Simulation")
 			{
+				io.clear_cmd();
 				// I think this will handles any user input for the percentages so that they all add to 1. if they don't then 
 				//   my probability calculations are inaccurate. 
 				while (again)
@@ -119,6 +120,7 @@ public:
 			}
 			else if (resp == "2" || resp == "search" || resp == "Resp")
 			{
+				io.clear_cmd();
 				if (riderGen == NULL)
 				{
 					cout << "The Simulation has not been run.\n" << std::endl;
@@ -135,6 +137,7 @@ public:
 			}
 			else if (resp == "3" || resp == "output data" || resp == "Output Data")
 			{
+				io.clear_cmd();
 				if (riderGen == NULL)
 				{
 					cout << "The Simulation has not been run.\n" << std::endl;
@@ -147,6 +150,7 @@ public:
 			}
 			else if (resp == "5" || resp == "print" || resp == "Print")
 			{
+				io.clear_cmd();
 				if (riderGen == NULL)
 				{
 					cout << "The Simulation has not been run.\n" << std::endl;
@@ -157,10 +161,13 @@ public:
 
 					for (int i = 0; i < names.size(); i++)
 						std::cout << names[i] << std::endl;
+
+					std::cout << std::endl;
 				}
 			}
 			else
 			{
+				//io.clear_cmd();
 				std::cout << "Unknown command. Try again.\n" << std::endl;
 			}
 		}
