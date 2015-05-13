@@ -43,9 +43,9 @@ public:
 
 		std::set<Trail*> set1;
 		std::set<Trail*>::iterator it = set1.begin();
-		Trail *BlackAdder = new EasyTrail(Base1, Base,6.0, 3.0);
-		Trail *DaimondBlack = new MedTrail(Base1, Base, 7.0, 4.0);
-		Trail *CottonMouth = new HardTrail(Base1, Base, 8.0, 5.0);
+		Trail *BlackAdder = new EasyTrail(Base1, Base,6.0, 0.0);
+		Trail *DaimondBlack = new MedTrail(Base1, Base, 7.0, 3.0);
+		Trail *CottonMouth = new HardTrail(Base1, Base, 8.0, 6.0);
 		set1.insert(it, BlackAdder);
 		set1.insert(it, DaimondBlack);
 		set1.insert(it, CottonMouth);
@@ -130,7 +130,7 @@ public:
 					riderGen->search(s);
 				}
 			}
-			else if (resp == "4" || resp == "exit" || resp == "Exit")
+			else if (resp == "5" || resp == "exit" || resp == "Exit")
 			{
 				again = false;
 			}
@@ -147,7 +147,7 @@ public:
 				}
 
 			}
-			else if (resp == "5" || resp == "print" || resp == "Print")
+			else if (resp == "4" || resp == "print" || resp == "Print")
 			{
 				io.clear_cmd();
 				if (riderGen == NULL)
@@ -166,7 +166,7 @@ public:
 			}
 			else
 			{
-				io.clear_cmd();
+				//io.clear_cmd();
 				std::cout << "Unknown command. Try again.\n" << std::endl;
 			}
 		}

@@ -44,7 +44,7 @@ public:
 			total_wait += wait_time;
 			current->arrival_time = clock;
 			current->departure_time = clock;
-			chosen->destination->lift->the_queue.push(current);
+			chosen->origin->lift->the_queue.push(current);
 		}
 
 	}

@@ -15,8 +15,8 @@ public:
 	double endurance;
 	Bicycle *whip;
 	Ticket pass;
-	int arrival_time=0;
-	int departure_time=0;
+	int arrival_time;
+	int departure_time;
 
 	Rider(double skill, double enduro, int ticket, int clock){
 		this->skill_lvl = skill;

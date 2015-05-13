@@ -50,7 +50,9 @@ public:
 		return (rider_trails[the_one]);
 	}
 	double run(Trail* t){
-		double active, passive, mechanical;
+		double active = 0;
+		double passive = 0;
+		double mechanical = 0;
 		int length = t->distance;
 		double end = length - endurance;
 
