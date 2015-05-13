@@ -31,7 +31,7 @@ private:
 	int clock;
 	int weeks = 2;
 	//int total_time = weeks * 60 * 24 * 7;
-	int total_time = 60;
+	int total_time = 1000;
 	IO io; 
 	RiderGenerator *riderGen; 
 	bool again = true;
@@ -79,9 +79,8 @@ public:
 		heads++;
 		Trailheads.push_back(Base1);
 		heads++;
-
-		//io = new IO();
-
+	}
+	void menu(){
 		while (again)
 		{
 			std::string resp = io.print_menu();

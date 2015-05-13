@@ -5,8 +5,12 @@ class Trailhead;
 class Trail;
 class ChairLift;
 class Ticket{
+friend class Rider;
 private:
-	
+	double AvgChairWait = 0;
+	double TotChairWait = 0;
+	double AvgTrailWait = 0;
+	double TotTrailWait = 0;
 	std::map<int, Trail*> TrailRecords;
 	std::map<int, Trailhead*> TrailheadRecords;
 	std::map<int, ChairLift*> ChairLiftRecords;
@@ -24,6 +28,13 @@ public:
 	}
 	void UpdateChairLift(int wait_time, ChairLift* lift){
 		ChairLiftRecords.insert(std::pair<int, ChairLift*>(wait_time, lift));
+	}
+	void update_ticket(){
+		AvgChairWait = avg_wait_chairlifts();
+		TotChairWait = tot_wait_chairlifts();
+		AvgTrailWait = avg_wait_trailheads();
+		TotTrailWait = tot_wait_trailheads();
+
 	}
 
 	double avg_wait_trailheads()

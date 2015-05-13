@@ -37,10 +37,11 @@ public:
 
 	std::string toString()
 	{
+		pass.update_ticket();
 		double d = pass.tot_wait_chairlifts() + pass.tot_wait_trailheads();
 		std::string s;
 		s.append("Skill Level: " + std::to_string((int)skill_lvl) + "\nEndurance: " + std::to_string((int)endurance)  + "\nTotal Wait Time: "
-			+ std::to_string((int)d) + "\n");
+			+ std::to_string((int)d) + "\nAverage Trailhead Wait Time: " + std::to_string((double)pass.AvgTrailWait) + "\nTotal Trailhead Wait Time: " + std::to_string((double)pass.TotTrailWait) + "\nAverage Chairlift Wait Time: " + std::to_string((double)pass.AvgChairWait) + "\nTotal Chairlift Wait Time: " + std::to_string((double)pass.TotChairWait));
 		return s;
 	}
 };

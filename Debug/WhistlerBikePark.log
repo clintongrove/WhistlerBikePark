@@ -1,6 +1,42 @@
-﻿Build started 5/13/2015 12:59:04 PM.
+﻿Build started 5/13/2015 1:43:53 PM.
      1>Project "C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\WhistlerBikePark\WhistlerBikePark.vcxproj" on node 2 (Build target(s)).
-     1>Link:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BikePark.cpp
+         BikePark.cpp
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\rider.h(32): warning C4150: deletion of pointer to incomplete type 'Bicycle'; no destructor called
+                 c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\rider.h(4) : see declaration of 'Bicycle'
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\ambicycle.h(7): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\ambicycle.h(8): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\intermediaterider.h(45): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\intermediaterider.h(59): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\intermediaterider.h(66): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\xcbicycle.h(7): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\xcbicycle.h(8): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\beginnerrider.h(48): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\beginnerrider.h(62): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\beginnerrider.h(69): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\dhbicycle.h(7): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\dhbicycle.h(8): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\advancedrider.h(42): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\advancedrider.h(56): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\advancedrider.h(63): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\trailhead.h(41): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\io.h(53): warning C4101: 'x' : unreferenced local variable
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\io.h(210): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\io.h(216): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\io.h(222): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\io.h(228): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\ridergenerator.h(36): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\ridergenerator.h(144): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\ridergenerator.h(145): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\ridergenerator.h(149): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\ridergenerator.h(150): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\ridergenerator.h(154): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\ridergenerator.h(155): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\simulator.h(161): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\ridergenerator.h(112): warning C4715: 'RiderGenerator::get_endurance' : not all control paths return a value
+     1>c:\users\clinton\documents\visual studio 2013\projects\whistlerbikepark\whistlerbikepark\ridergenerator.h(122): warning C4715: 'RiderGenerator::get_skill_level' : not all control paths return a value
+       Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\Debug\WhistlerBikePark.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\Debug\WhistlerBikePark.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\Debug\WhistlerBikePark.lib" /MACHINE:X86 Debug\BikePark.obj
          Debug\ChairLift.obj
          WhistlerBikePark.vcxproj -> C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\Debug\WhistlerBikePark.exe
@@ -8,4 +44,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.80
+Time Elapsed 00:00:02.31
