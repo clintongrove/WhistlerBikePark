@@ -1,4 +1,4 @@
-﻿Build started 5/13/2015 11:18:14 AM.
+﻿Build started 5/13/2015 11:26:25 AM.
      1>Project "C:\Users\Joseph\Documents\GitHub\WhistlerBikePark\WhistlerBikePark.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BikePark.cpp
@@ -22,10 +22,10 @@
      1>c:\users\joseph\documents\github\whistlerbikepark\advancedrider.h(63): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
      1>c:\users\joseph\documents\github\whistlerbikepark\trailhead.h(41): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\joseph\documents\github\whistlerbikepark\io.h(53): warning C4101: 'x' : unreferenced local variable
-     1>c:\users\joseph\documents\github\whistlerbikepark\io.h(209): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\joseph\documents\github\whistlerbikepark\io.h(215): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\joseph\documents\github\whistlerbikepark\io.h(221): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\joseph\documents\github\whistlerbikepark\io.h(227): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\joseph\documents\github\whistlerbikepark\io.h(210): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\joseph\documents\github\whistlerbikepark\io.h(216): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\joseph\documents\github\whistlerbikepark\io.h(222): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\joseph\documents\github\whistlerbikepark\io.h(228): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\joseph\documents\github\whistlerbikepark\ridergenerator.h(36): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
      1>c:\users\joseph\documents\github\whistlerbikepark\ridergenerator.h(144): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\joseph\documents\github\whistlerbikepark\ridergenerator.h(145): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
@@ -43,4 +43,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.25
+Time Elapsed 00:00:03.98

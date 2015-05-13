@@ -196,48 +196,55 @@ public:
 	void output_data_to_file(vector<int> average_wait_time_chairlifts, vector<int> total_wait_time_chairlifts,
 		vector<int> average_wait_time_trailheads, vector<int> total_wait_time_trailheads, vector<int> ticket_stats)
 	{
-		fstream out_file;
+		try{
+			fstream out_file;
 
-		out_file.open("Data_to_graph.txt", std::ios::out);
+			out_file.open("Data_to_graph.txt", std::ios::out);
 
-		out_file << "Percentage of beginner riders: " << percent_beginner << std::endl;
-		out_file << "Percentage of intermedieate riders: " << percent_intermediate << std::endl;
-		out_file << "Percentage of advancded riders: " << percent_advanced << std::endl;
-		out_file << std::endl;
+			out_file << "Percentage of beginner riders: " << percent_beginner << std::endl;
+			out_file << "Percentage of intermedieate riders: " << percent_intermediate << std::endl;
+			out_file << "Percentage of advancded riders: " << percent_advanced << std::endl;
+			out_file << std::endl;
 
-		out_file << "Average wait time for trailheads.\n";
-		for (int i = 0; i < average_wait_time_trailheads.size(); i++)
+			out_file << "Average wait time for trailheads.\n";
+			for (int i = 0; i < average_wait_time_trailheads.size(); i++)
+			{
+				out_file << average_wait_time_trailheads[i] << std::endl;
+			}
+
+			out_file << "Total wait time for trailheads.\n";
+			for (int i = 0; i < total_wait_time_trailheads.size(); i++)
+			{
+				out_file << total_wait_time_trailheads[i] << std::endl;
+			}
+
+			out_file << "Average wait time for trailheads.\n";
+			for (int i = 0; i < average_wait_time_chairlifts.size(); i++)
+			{
+				out_file << average_wait_time_chairlifts[i] << std::endl;
+			}
+
+			out_file << "Total wait time for trailheads.\n";
+			for (int i = 0; i < total_wait_time_chairlifts.size(); i++)
+			{
+				out_file << total_wait_time_chairlifts[i] << std::endl;
+			}
+
+			out_file << "Beginner Rider average trailhead wait time: " << ticket_stats[0] << std::endl;
+			out_file << "Beginner Rider average chairlift wait time: " << ticket_stats[1] << std::endl;
+			out_file << "Intermdediate Rider average trailhead wait time: " << ticket_stats[2] << std::endl;
+			out_file << "Intermdediate Rider average chairlift wait time: " << ticket_stats[3] << std::endl;
+			out_file << "Advanced Rider average trailhead wait time: " << ticket_stats[4] << std::endl;
+			out_file << "Advanced Rider average chairlift wait time: " << ticket_stats[5] << std::endl;
+
+
+			out_file.close();
+		}
+		catch (...)
 		{
-			out_file << average_wait_time_trailheads[i] << std::endl;
+			std::cout << "Something happened." << std::endl;
 		}
 
-		out_file << "Total wait time for trailheads.\n";
-		for (int i = 0; i < total_wait_time_trailheads.size(); i++)
-		{
-			out_file << total_wait_time_trailheads[i] << std::endl;
-		}
-
-		out_file << "Average wait time for trailheads.\n";
-		for (int i = 0; i < average_wait_time_chairlifts.size(); i++)
-		{
-			out_file << average_wait_time_chairlifts[i] << std::endl;
-		}
-
-		out_file << "Total wait time for trailheads.\n";
-		for (int i = 0; i < total_wait_time_chairlifts.size(); i++)
-		{
-			out_file << total_wait_time_chairlifts[i] << std::endl;
-		}
-
-		out_file << "Beginner Rider average trailhead wait time: " << ticket_stats[0] << std::endl;
-		out_file << "Beginner Rider average chairlift wait time: " << ticket_stats[1] << std::endl;
-		out_file << "Intermdediate Rider average trailhead wait time: " << ticket_stats[2] << std::endl;
-		out_file << "Intermdediate Rider average chairlift wait time: " << ticket_stats[3] << std::endl;
-		out_file << "Advanced Rider average trailhead wait time: " << ticket_stats[4] << std::endl;
-		out_file << "Advanced Rider average chairlift wait time: " << ticket_stats[5] << std::endl;
-
-
-		out_file.close();
 	}
 
 	string search_name()
