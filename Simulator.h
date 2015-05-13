@@ -118,7 +118,7 @@ public:
 
 				run_simulation();
 			}
-			else if (resp == "2" || resp == "search" || resp == "Resp")
+			else if (resp == "2" || resp == "search" || resp == "Search")
 			{
 				io.clear_cmd();
 				if (riderGen == NULL)
