@@ -48,7 +48,10 @@ public:
 		}
 
 	}
+	void line(Rider* current){
+		trail_line.push(current);
 
+	}
 };
 
 #endif

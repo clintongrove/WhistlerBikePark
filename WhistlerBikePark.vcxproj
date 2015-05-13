@@ -79,6 +79,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BikePark.cpp" />
+    <ClCompile Include="ChairLift.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AMBicycle.h" />

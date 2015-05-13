@@ -1,11 +1,13 @@
 #ifndef CHAIRLIFT_H_
 #define CHAIRLIFT_H_
-#include <queue>
 class Trailhead;
-class Rider;
+#include "Rider.h"
+#include <queue>
+
 class ChairLift{
 
 public:
+	Rider * current=NULL;
 	std::queue<Rider*>the_queue;
 	Trailhead *destination;
 	Trailhead *origin;
@@ -20,7 +22,7 @@ public:
 	}
 	void update(int clock){
 		if (!the_queue.empty()){
-			Rider * current = the_queue.front();
+			current = the_queue.front();
 			if (current->pass.valid == 1){
 				current->departure_time = (clock - ride);
 				if (clock > current->departure_time){
@@ -30,11 +32,12 @@ public:
 					++num_served;
 					total_wait += wait_time;
 					the_queue.pop();
-					//FIXME push rider to desired trailhead
+					this->pushrider();
 				}
 			}
 		}
 	}
+	void pushrider();
 };
 
 #endif

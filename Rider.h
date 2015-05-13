@@ -4,6 +4,7 @@ class Trail;
 class Bicycle;
 #include<iostream>
 #include <string>
+#include <set>
 #include "Ticket.h"
 #include "Trail.h"
 class Rider{
