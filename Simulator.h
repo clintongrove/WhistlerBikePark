@@ -167,7 +167,7 @@ public:
 			}
 			else
 			{
-				//io.clear_cmd();
+				io.clear_cmd();
 				std::cout << "Unknown command. Try again.\n" << std::endl;
 			}
 		}
@@ -197,7 +197,7 @@ public:
 
 
 		}
-
+		io.clear_cmd();
 		std::cout << "\n----------Simulation Done----------\n" << std::endl;
 
 	}

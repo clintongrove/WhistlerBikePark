@@ -146,7 +146,7 @@ public:
 	{
 		string resp;
 		std::cout << ">>: ";
-		std::getline(cin, resp);
+		std::getline(std::cin, resp);
 
 		return resp;
 	}

@@ -32,7 +32,7 @@ public:
 					++num_served;
 					total_wait += wait_time;
 					the_queue.pop();
-					this->pushrider();
+					pushrider();
 				}
 			}
 		}
