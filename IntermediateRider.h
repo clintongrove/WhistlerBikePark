@@ -56,7 +56,7 @@ public:
 		int length = t->distance;
 		double end = length - endurance;
 
-		mechanical = whip.mechanical();
+		mechanical = whip->mechanical();
 		if (mechanical == 0)
 			passive = (length - end) / (skill_lvl * 3);
 		else{
