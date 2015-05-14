@@ -22,7 +22,7 @@ public:
 		this->skill_lvl = skill;
 		this->endurance = enduro;
 		this->arrival_time = clock;
-		this->pass = Ticket(ticket);
+		this->pass = Ticket(ticket, clock);
 
 	}
 

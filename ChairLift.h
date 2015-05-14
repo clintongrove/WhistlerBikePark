@@ -23,7 +23,8 @@ public:
 	void update(int clock){
 		if (!the_queue.empty()){
 			current = the_queue.front();
-			if (current->pass.valid == 1){
+			current->pass.checkvalid(clock);
+			if (current->pass.valid == true){
 				current->departure_time = (clock - ride);
 				if (clock > current->departure_time){
 
@@ -34,6 +35,10 @@ public:
 					the_queue.pop();
 					pushrider();
 				}
+			}
+			else{
+				the_queue.pop();
+
 			}
 		}
 	}
