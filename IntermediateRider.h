@@ -20,7 +20,7 @@ public:
 
 	int arrival_time;
 	int departure_time;
-	Trail* choice(std::set<Trail*>the_trails){
+	Trail* choice(std::set<Trail*>the_trails){//@return Trail* choice of rider @param Trailhead's set of trails, see PsuedoCode for details
 		std::vector<Trail*> rider_trails;
 		for (std::set<Trail*>::iterator it = the_trails.begin(); it != the_trails.end(); it++){
 			if (typeid(HardTrail) == typeid(*it)){
@@ -51,7 +51,7 @@ public:
 		}
 		return (rider_trails[the_one]);
 	}
-	double run(Trail* t){
+	double run(Trail* t){//@return double run time for the riders choice of trail @param Trail* that the run will take place on
 		double active = 0;
 		double passive = 0;
 		double mechanical = 0;
@@ -61,7 +61,7 @@ public:
 		mechanical = whip->mechanical();
 		if (mechanical == 0)
 			passive = (length - end) / (skill_lvl * 3);
-		else{
+		else{//case of a crash/mechanical error. rider has to walk down
 			srand(time(NULL));
 			end = rand() % length;
 			mechanical = (length - end) / 3;

@@ -5,7 +5,7 @@
 class AMBicycle : public Bicycle{
 public:
 	AMBicycle(){ srand(time(NULL)); }
-	bool mechanical(){ return rand() % 1; }
+	bool mechanical(){ return rand() % 1; }//@return bool random mechanical error probability
 };
 
 #endif
