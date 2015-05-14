@@ -125,7 +125,8 @@ public:
 
 
 	/**
-		Prints the options that the user can do.
+	@return string - user's response
+	Prints the options that the user can do.
 	*/
 	string print_menu()
 	{
@@ -141,13 +142,14 @@ public:
 	}
 
 	/**
-		Gets input from the user
+	@return string - user's response.
+	Gets input from the user
 	*/
 	string get_input()
 	{
 		string resp;
 		std::cout << ">>: ";
-		std::getline(std::cin, resp);
+		std::getline(std::cin, resp); // gets user input
 
 		return resp;
 	}
@@ -167,23 +169,24 @@ public:
 
 		try
 		{
-			myfile.open("residents_273ville.txt", std::ios::in);
+			myfile.open("residents_273ville.txt", std::ios::in); // opens file to read from
 
+			// reads in line by line
 			while (!myfile.eof())
 			{
-				std::getline(myfile, s);
+				std::getline(myfile, s); 
 				names.push_back(s);
 			}
 
-			myfile.close();
+			myfile.close(); // close file
 		}
 		catch (std::exception exp)
 		{
-			std::cout << "Cannot find the file" << std::endl;
+			std::cout << "Cannot find the file" << std::endl; // handles not finding the file
 		}
 		catch (...)
 		{
-			std::cout << "Don't know what is happening.\n" << std::endl;
+			std::cout << "Don't know what is happening.\n" << std::endl; // handles any other exception
 		}
 
 		//delete s;
@@ -192,7 +195,7 @@ public:
 
 
 	/**
-		Outputs the data that we are going to process to a file.
+	Outputs the data that we are going to process to a file.
 	*/
 	void output_data_to_file(vector<int> Chairlift_num_served, vector<int> Chairlift_total_wait, vector<int> trailhead_num_served, vector<int> trailhead_total_wait, vector<int> ticket_stats)
 	{
@@ -279,7 +282,7 @@ public:
 	}
 
 	/**
-		@return the percentage of beginner riders
+	@return the percentage of beginner riders
 	*/
 	double get_pbeginner(){ return percent_beginner; }
 

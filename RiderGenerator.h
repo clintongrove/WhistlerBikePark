@@ -28,23 +28,40 @@ private:
 	double pbeginner, padvanced, pintermediate;
 	int ticket_no;
 	Rider *r = NULL;
+
 public:
+	/**
+	Default Constructor
+	*/
 	RiderGenerator(){}
+
+	/**
+		Constructor
+		@param vector<string> Dataville - the vector of all of the names that we can use
+		@param double x - percent of beginners
+		@param double y - percent of intermediate
+		@param double z - percent of advanced
+	*/
 	RiderGenerator(std::vector<string> DataVille, double x, double y, double z) : pbeginner(x), pintermediate(y),
 		padvanced(x), ticket_no(0), names(DataVille)
 	{
-		srand(time(NULL));
+		srand(time(NULL)); // seeds the random number generator
 	}
 
+	/**
+	Destructor
+	*/
 	~RiderGenerator()
 	{
 		std::map<string, Rider*>::iterator it = riders.begin();
 
+		// deletes all of the pointers in the map
 		while (!(it == riders.end()))
 		{
-			delete it->second;
+			delete it->second; 
 		}
 
+		// deletes the temp rider
 		if (r == NULL)
 			delete r;
 	}
