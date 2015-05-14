@@ -112,7 +112,7 @@ public:
 		{
 			cout << "Enter the arrival rate of riders (riders/hour): ";
 			cin >> rate;
-			arrival_rate = rate / 60.0;
+			arrival_rate = (double) rate / 60.0;
 		}
 		catch (std::exception exp)
 		{
@@ -193,8 +193,7 @@ public:
 	/**
 	Outputs the data that we are going to process to a file.
 	*/
-	void output_data_to_file(vector<int> average_wait_time_chairlifts, vector<int> total_wait_time_chairlifts,
-		vector<int> average_wait_time_trailheads, vector<int> total_wait_time_trailheads, vector<int> ticket_stats)
+	void output_data_to_file(vector<int> Chairlift_num_served, vector<int> Chairlift_total_wait, vector<int> trailhead_num_served, vector<int> trailhead_total_wait, vector<int> ticket_stats)
 	{
 		try{
 			fstream out_file;
@@ -206,29 +205,31 @@ public:
 			out_file << "Percentage of advancded riders: " << percent_advanced << std::endl;
 			out_file << std::endl;
 
-			out_file << "Average wait time for trailheads.\n";
-			for (int i = 0; i < average_wait_time_trailheads.size(); i++)
+			out_file << "Chairlift No. Served.\n";
+			for (int i = 0; i < Chairlift_num_served.size(); i++)
 			{
-				out_file << average_wait_time_trailheads[i] << std::endl;
+				out_file << Chairlift_num_served[i] << std::endl;
 			}
 
-			out_file << "Total wait time for trailheads.\n";
-			for (int i = 0; i < total_wait_time_trailheads.size(); i++)
+			out_file << "Total wait time for Chairlifts.\n";
+			for (int i = 0; i < Chairlift_total_wait.size(); i++)
 			{
-				out_file << total_wait_time_trailheads[i] << std::endl;
+				out_file << Chairlift_total_wait[i] << std::endl;
 			}
 
-			out_file << "Average wait time for trailheads.\n";
-			for (int i = 0; i < average_wait_time_chairlifts.size(); i++)
+			out_file << "Trailhead no. served.\n";
+			for (int i = 0; i < trailhead_num_served.size(); i++)
 			{
-				out_file << average_wait_time_chairlifts[i] << std::endl;
+				out_file << trailhead_num_served[i] << std::endl;
 			}
 
-			out_file << "Total wait time for trailheads.\n";
-			for (int i = 0; i < total_wait_time_chairlifts.size(); i++)
+			out_file << "Total wait time for Trailheads.\n";
+			for (int i = 0; i < trailhead_total_wait.size(); i++)
 			{
-				out_file << total_wait_time_chairlifts[i] << std::endl;
+				out_file << trailhead_total_wait[i] << std::endl;
 			}
+
+			out_file << std::endl;
 
 			out_file << "Beginner Rider average trailhead wait time: " << ticket_stats[0] << std::endl;
 			out_file << "Beginner Rider average chairlift wait time: " << ticket_stats[1] << std::endl;

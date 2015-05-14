@@ -31,7 +31,7 @@ private:
 	int clock;
 	int weeks = 2;
 	//int total_time = weeks * 60 * 24 * 7;
-	int total_time = 1000;
+	int total_time = 24*60;
 	IO io; 
 	RiderGenerator *riderGen; 
 	bool again = true;
@@ -224,13 +224,13 @@ public:
 			Trailhead_num_served.push_back(Trailheads[i]->num_served); 
 			Trailhead_total_wait.push_back(Trailheads[i]->total_wait);
 		}
-		for (int i = 1; i < lifts; i++){
+		for (int i = 0; i < lifts; i++){
 			Chairlift_num_served.push_back(Chairlifts[i]->num_served);
 			Chairlift_total_wait.push_back(Chairlifts[i]->total_wait);
 		}
 
 
-		io.output_data_to_file(Trailhead_num_served, Trailhead_total_wait, Chairlift_num_served, Chairlift_total_wait, ticket_stats);
+		io.output_data_to_file(Chairlift_num_served, Chairlift_total_wait, Trailhead_num_served, Trailhead_total_wait, ticket_stats);
 	}
 
 

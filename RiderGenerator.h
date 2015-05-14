@@ -1,6 +1,6 @@
 #ifndef _RIDERGENERATOR_h
 #define _RIDERGENERATOR_h
-
+#include <typeinfo>
 #include <iostream>
 #include <random> 
 #include <set>
@@ -140,29 +140,29 @@ public:
 		int Inum = 0;
 		int Anum = 0;
 		for (std::map<string, Rider*>::iterator it = riders.begin(); it != riders.end(); ++it){
-			if (typeid(it->second) == typeid(BeginnerRider)){
+			if (typeid(BeginnerRider)==typeid(*it->second)){
 				BRider_total_chairlift_wait+=it->second->pass.tot_wait_chairlifts();
 				BRider_total_trailhead_wait += it->second->pass.tot_wait_trailheads();
 				Bnum++;
 			}
-			if (typeid(it->second) == typeid(IntermediateRider)){
+			if (typeid(IntermediateRider)==typeid(*it->second)){
 				IRider_total_chairlift_wait += it->second->pass.tot_wait_chairlifts();
 				IRider_total_trailhead_wait += it->second->pass.tot_wait_trailheads();
 				Inum++;
 			}
-			if (typeid(it->second) == typeid(AdvancedRider)){
+			if (typeid(AdvancedRider)==typeid(*it->second)){
 				ARider_total_chairlift_wait += it->second->pass.tot_wait_chairlifts();
 				ARider_total_trailhead_wait += it->second->pass.tot_wait_trailheads();
 				Anum++;
 			}
-			vec.push_back(BRider_avg_trailhead_wait = BRider_total_trailhead_wait/Bnum);
-			vec.push_back(BRider_avg_chairlift_wait = BRider_total_chairlift_wait / Bnum);
-			vec.push_back(IRider_avg_trailhead_wait = IRider_total_trailhead_wait / Inum);
-			vec.push_back(IRider_avg_chairlift_wait = IRider_total_chairlift_wait / Inum);
-			vec.push_back(ARider_avg_trailhead_wait = ARider_total_trailhead_wait / Anum);
-			vec.push_back(ARider_avg_chairlift_wait = ARider_total_chairlift_wait / Anum);
-			
 		}
+
+		vec.push_back(BRider_avg_trailhead_wait = BRider_total_trailhead_wait / Bnum);
+		vec.push_back(BRider_avg_chairlift_wait = BRider_total_chairlift_wait / Bnum);
+		vec.push_back(IRider_avg_trailhead_wait = IRider_total_trailhead_wait / Inum);
+		vec.push_back(IRider_avg_chairlift_wait = IRider_total_chairlift_wait / Inum);
+		vec.push_back(ARider_avg_trailhead_wait = ARider_total_trailhead_wait / Anum);
+		vec.push_back(ARider_avg_chairlift_wait = ARider_total_chairlift_wait / Anum);
 		return vec;
 	}
 
