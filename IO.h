@@ -37,7 +37,7 @@ public:
 		input_intermediate_percent();
 		input_advanced_percent();
 
-		if (!(get_pbeginner() + get_pintermediate() + get_padvanced() < 1.000000000009 || get_pbeginner() + get_pintermediate() + get_padvanced() > 0.99999999991))
+if (!(get_pbeginner() + get_pintermediate() + get_padvanced() < 1.000000000009 || get_pbeginner() + get_pintermediate() + get_padvanced() > 0.99999999991))
 			throw std::invalid_argument("Percentages don't add to 1.\n");
 
 		input_arrival_rate();
