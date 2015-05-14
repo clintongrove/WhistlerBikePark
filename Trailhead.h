@@ -50,7 +50,7 @@ public:
 		}
 
 	}
-	void line(Rider* current){
+	void line(Rider* current){//@return void @param Rider* being pushed from chairlift to trailhead queue
 		trail_line.push(current);
 
 	}

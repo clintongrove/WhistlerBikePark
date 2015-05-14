@@ -4,8 +4,8 @@ class Bicycle{
 	friend class Rider;
 public:
 	Bicycle(){}
-	virtual bool mechanical() = 0;
-	//~Bicycle(){ delete this; }
+	virtual bool mechanical() = 0;//@return bool random mechanical error probability, pure vurtual
+
 };
 
 #endif

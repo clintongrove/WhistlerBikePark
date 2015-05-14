@@ -18,7 +18,7 @@ public:
 
 	ChairLift(){};
 
-	ChairLift(Trailhead*d, Trailhead*o){
+	ChairLift(Trailhead*d, Trailhead*o){//constructor sets chairlifts origin and destination Trail* variables
 		this->destination = d;
 		this->origin = o;
 		std::cout << " chairlift Constructed!" << std::endl;
@@ -34,7 +34,7 @@ public:
 			delete origin;
 	}
 
-	void update(int clock){
+	void update(int clock){//@return void @param clock to compare time see PsuedoCode for details
 		if (!the_queue.empty()){
 			current = the_queue.front();
 			current->pass.checkvalid(clock);
