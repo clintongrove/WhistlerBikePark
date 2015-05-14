@@ -1,0 +1,23 @@
+Percentage of beginner riders: 1
+Percentage of intermedieate riders: 0
+Percentage of advancded riders: 0
+Arrival_rate: 0.416667
+
+Chairlift No. Served.
+4319
+Total wait time for Chairlifts.
+1473913
+Trailhead no. served.
+4318
+Total wait time for Trailheads.
+1499815
+
+Beginner Rider average trailhead wait time: 1806
+Beginner Rider average chairlift wait time: 1775
+Intermdediate Rider average trailhead wait time: 0
+Intermdediate Rider average chairlift wait time: 0
+Advanced Rider average trailhead wait time: 0
+Advanced Rider average chairlift wait time: 0
+
+Average wait time at a trailhead: 602
+Average wait time at a chairlift: 591
