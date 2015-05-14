@@ -32,7 +32,7 @@ private:
 	//int weeks = 2;
 	//int weeks = 1;
 	//int total_time = weeks * 60 * 24 * 7;
-	int day = 3;
+	int day = 14;
 	int total_time = day * 60 * 24;
 	//int total_time = 24*60;
 	IO io; 
@@ -47,8 +47,8 @@ public:
 		std::set<Trail*> set1;
 		std::set<Trail*>::iterator it = set1.begin();
 		Trail *BlackAdder = new EasyTrail(Base1, Base,6.0, 0.0);
-		Trail *DaimondBlack = new MedTrail(Base1, Base, 7.0, 3.0);
-		Trail *CottonMouth = new HardTrail(Base1, Base, 8.0, 6.0);
+		Trail *DaimondBlack = new MedTrail(Base1, Base, 7.0, 4.0);
+		Trail *CottonMouth = new HardTrail(Base1, Base, 8.0, 7.0);
 		set1.insert(it, BlackAdder);
 		set1.insert(it, DaimondBlack);
 		set1.insert(it, CottonMouth);
