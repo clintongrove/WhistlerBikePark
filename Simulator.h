@@ -29,9 +29,12 @@ private:
 	std::vector<Trailhead*> Trailheads;
 	std::vector<ChairLift*> Chairlifts;
 	int clock;
-	int weeks = 2;
+	//int weeks = 2;
+	//int weeks = 1;
 	//int total_time = weeks * 60 * 24 * 7;
-	int total_time = 24*60;
+	int day = 3;
+	int total_time = day * 60 * 24;
+	//int total_time = 24*60;
 	IO io; 
 	RiderGenerator *riderGen; 
 	bool again = true;
