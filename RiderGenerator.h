@@ -67,15 +67,20 @@ public:
 	}
 
 
-
+	/**
+	@return Rider* - returns a pointer to a new rider that is in the map of riders.
+	@param int clock - the current clock time
+	*/
 	Rider* createRider(int clock)
 	{
 		int rider;
 		rider = rand() % names.size();
 		string random_name = names[rider];
 
-		std::map<string, Rider*>::iterator it = riders.find(random_name);
+		// sees if the rider has already visited the the mountain
+		std::map<string, Rider*>::iterator it = riders.find(random_name);  
 
+		// makes sure that the rider is not already on the mountain if the rider exists
 		while (!(it == riders.end()))
 		{
 			if (!it->second->onMountaion)
@@ -92,8 +97,10 @@ public:
 
 		}
 
+		// creates a new rider with the random name if he has not already visited the mountain
 		double who = ((double)rand() / RAND_MAX); // makes a double between 0 and 1
 
+		// creates a random rider with the input probability from the user.
 		if (who <= pbeginner)
 		{
 			r = new BeginnerRider(get_skill_level("beginner"), get_endurance("beginner"), ticket_no, clock);
