@@ -4,6 +4,12 @@ class Trailhead;
 class Trail{
 
 public:
+	bool inuse;
+	double difficulty;
+	double distance;
+	Trailhead *destination = NULL;
+	Trailhead *origin = NULL;
+
 	Trail(Trailhead*d,Trailhead*o,double dist, double diff){
 		this->destination = d;
 		this->origin = o;
@@ -11,11 +17,15 @@ public:
 		this->distance = dist;
 		this->difficulty = diff;
 	}
-	bool inuse;
-	double difficulty;
-	double distance;
-	Trailhead *destination;
-	Trailhead *origin;
+
+	~Trail()
+	{
+		if (destination == NULL)
+			delete destination;
+		if (origin == NULL)
+			delete origin;
+	}
+
 };
 
 #endif

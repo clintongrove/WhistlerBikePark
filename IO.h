@@ -37,8 +37,9 @@ public:
 		input_intermediate_percent();
 		input_advanced_percent();
 
-if (!(get_pbeginner() + get_pintermediate() + get_padvanced() < 1.000000000009 || get_pbeginner() + get_pintermediate() + get_padvanced() > 0.99999999991))
-			throw std::invalid_argument("Percentages don't add to 1.\n");
+		// makes sure that the user has input a valid set of percentage
+		if (!(get_pbeginner() + get_pintermediate() + get_padvanced() < 1.000000000009 || get_pbeginner() + get_pintermediate() + get_padvanced() > 0.99999999991))
+			throw std::invalid_argument("Percentages don't add to 1.\n"); 
 
 		input_arrival_rate();
 	}
@@ -191,7 +192,7 @@ if (!(get_pbeginner() + get_pintermediate() + get_padvanced() < 1.000000000009 |
 
 
 	/**
-	Outputs the data that we are going to process to a file.
+		Outputs the data that we are going to process to a file.
 	*/
 	void output_data_to_file(vector<int> Chairlift_num_served, vector<int> Chairlift_total_wait, vector<int> trailhead_num_served, vector<int> trailhead_total_wait, vector<int> ticket_stats)
 	{
@@ -200,8 +201,9 @@ if (!(get_pbeginner() + get_pintermediate() + get_padvanced() < 1.000000000009 |
 			double average_wait_trailheads = 0;
 			double average_wait_chairlifts = 0;
 
-			out_file.open("Data_to_graph.txt", std::ios::out);
+			out_file.open("Data_to_graph.txt", std::ios::out); // opens file
 
+			// outputs the user input
 			out_file << "Percentage of beginner riders: " << percent_beginner << std::endl;
 			out_file << "Percentage of intermedieate riders: " << percent_intermediate << std::endl;
 			out_file << "Percentage of advancded riders: " << percent_advanced << std::endl;
@@ -236,6 +238,7 @@ if (!(get_pbeginner() + get_pintermediate() + get_padvanced() < 1.000000000009 |
 
 			out_file << std::endl;
 
+			// outputs the stats collected from the riders' tickets
 			out_file << "Beginner Rider average trailhead wait time: " << ticket_stats[0] << std::endl;
 			out_file << "Beginner Rider average chairlift wait time: " << ticket_stats[1] << std::endl;
 			out_file << "Intermdediate Rider average trailhead wait time: " << ticket_stats[2] << std::endl;
@@ -245,32 +248,54 @@ if (!(get_pbeginner() + get_pintermediate() + get_padvanced() < 1.000000000009 |
 
 			out_file << std::endl;
 
+			// averages the ticket stats for an overall average
 			out_file << "Average wait time at a trailhead: " << ((ticket_stats[0] + ticket_stats[2] + ticket_stats[4]) / 3) << std::endl;
 			out_file << "Average wait time at a chairlift: " << ((ticket_stats[1] + ticket_stats[3] + ticket_stats[5]) / 3) << std::endl;
 
-			out_file.close();
+			out_file.close(); // closes file
 		}
 		catch (...)
 		{
-			std::cout << "Something happened." << std::endl;
+			std::cout << "Something happened." << std::endl; // Handles any thrown exception
 		}
 
 	}
 
+	/**
+		@return string resp - the user's response to the prompt
+	*/
 	string search_name()
 	{
 		cout << "Enter name to search: \n";
 		return get_input();
 	}
 
+	/**
+		clears the cmd prompt window
+	*/
 	void clear_cmd()
 	{
 		system("cls");
 	}
 
+	/**
+		@return the percentage of beginner riders
+	*/
 	double get_pbeginner(){ return percent_beginner; }
+
+	/**
+	@return the percentage of intermediate riders
+	*/
 	double get_pintermediate(){ return percent_intermediate; }
+
+	/**
+	@return the percentage of advanced riders
+	*/
 	double get_padvanced(){ return percent_advanced; }
+
+	/**
+	@return the arrival rate
+	*/
 	double get_arrival_rate(){ return arrival_rate; }
 
 };
