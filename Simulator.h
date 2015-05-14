@@ -32,7 +32,7 @@ private:
 	//int weeks = 2;
 	//int weeks = 1;
 	//int total_time = weeks * 60 * 24 * 7;
-	int day = 14;
+	int day = 3;
 	int total_time = day * 60 * 24;
 	//int total_time = 24*60;
 	IO io; 
@@ -122,7 +122,6 @@ public:
 			}
 			else if (resp == "2" || resp == "search" || resp == "Search")
 			{
-				io.clear_cmd();
 				if (riderGen == NULL)
 				{
 					cout << "The Simulation has not been run.\n" << std::endl;
