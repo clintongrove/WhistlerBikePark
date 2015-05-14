@@ -157,12 +157,28 @@ public:
 			}
 		}
 
-		vec.push_back(BRider_avg_trailhead_wait = BRider_total_trailhead_wait / Bnum);
-		vec.push_back(BRider_avg_chairlift_wait = BRider_total_chairlift_wait / Bnum);
-		vec.push_back(IRider_avg_trailhead_wait = IRider_total_trailhead_wait / Inum);
-		vec.push_back(IRider_avg_chairlift_wait = IRider_total_chairlift_wait / Inum);
-		vec.push_back(ARider_avg_trailhead_wait = ARider_total_trailhead_wait / Anum);
-		vec.push_back(ARider_avg_chairlift_wait = ARider_total_chairlift_wait / Anum);
+
+		for (int i = 0; i < 6; i++)
+		{
+			vec.push_back(0);
+		}
+
+
+		if ( Bnum != 0)
+		{
+			vec[0] = (BRider_avg_trailhead_wait = BRider_total_trailhead_wait / Bnum);
+			vec[1] = (BRider_avg_chairlift_wait = BRider_total_chairlift_wait / Bnum);
+		}
+		else if ( Inum != 0 )
+		{
+			vec[2] = (IRider_avg_trailhead_wait = IRider_total_trailhead_wait / Inum);
+			vec[3] = (IRider_avg_chairlift_wait = IRider_total_chairlift_wait / Inum);
+		}
+		else if (Anum != 0 )
+		{
+			vec[4] = (ARider_avg_trailhead_wait = ARider_total_trailhead_wait / Anum);
+			vec[5] = (ARider_avg_chairlift_wait = ARider_total_chairlift_wait / Anum);
+		}
 		return vec;
 	}
 
