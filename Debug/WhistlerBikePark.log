@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 5/13/2015 8:23:26 PM.
      1>Project "C:\Users\Joseph\Documents\GitHub\WhistlerBikePark\WhistlerBikePark.vcxproj" on node 2 (Build target(s)).
      1>Link:
@@ -7,3 +8,16 @@
 Build succeeded.
 
 Time Elapsed 00:00:00.04
+=======
+﻿Build started 5/13/2015 8:23:47 PM.
+     1>Project "C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\WhistlerBikePark\WhistlerBikePark.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\Debug\WhistlerBikePark.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\Debug\WhistlerBikePark.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\Debug\WhistlerBikePark.lib" /MACHINE:X86 Debug\BikePark.obj
+         Debug\ChairLift.obj
+         WhistlerBikePark.vcxproj -> C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\Debug\WhistlerBikePark.exe
+     1>Done Building Project "C:\Users\Clinton\Documents\Visual Studio 2013\Projects\WhistlerBikePark\WhistlerBikePark\WhistlerBikePark.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.42
+>>>>>>> origin/master

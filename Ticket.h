@@ -16,10 +16,11 @@ private:
 	std::map<int, ChairLift*> ChairLiftRecords;
 	
 public:
-	bool valid = 1;
+	int boughtat;
+	bool valid = true;
 	int ticket_no;
 	Ticket(){}
-	Ticket(int number){ ticket_no = number; }
+	Ticket(int number, int clock){ ticket_no = number; boughtat = clock; }
 	void UpdateTrail(int run_time,Trail* trail){
 		TrailRecords.insert(std::pair<int,Trail*>(run_time, trail));
 	}
@@ -36,7 +37,7 @@ public:
 		TotTrailWait = tot_wait_trailheads();
 
 	}
-
+	void checkvalid(int clock){ if (boughtat + (60 * 5) < clock) valid = false; }
 	double avg_wait_trailheads()
 	{
 		int tot = 0;
